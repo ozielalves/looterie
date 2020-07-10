@@ -8,9 +8,9 @@ import './styles.css';
 
 import logo from '../../assets/Logo.png';
 
-async function handleSubmition(event: FormEvent) {
+/*async function handleSubmition(event: FormEvent) {
   window.location.replace('http://localhost:3000/sorteiosabertos');
-}
+}*/ // LEMBRAR DE POR (onSubmit={handleSubmition}) no form 
 
 const Login = () => {
   return(
@@ -19,7 +19,7 @@ const Login = () => {
         <div className="bloco">
           <img id="logo" src={logo} alt="Loterie"/>
 
-          <form onSubmit={handleSubmition}>
+          <form action="http://localhost:3000/sorteiosabertos">
             <div className="form-header">
               <Link id="arrow" to="/">
                 <BsArrowLeft />

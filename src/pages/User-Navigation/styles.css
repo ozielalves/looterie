@@ -2,8 +2,6 @@
   min-width: 200px;
   max-width: 200px;
   min-height: 100vh;
-  
-  color: #fff;
   text-align: center;
 }
 
@@ -26,7 +24,6 @@
 }
 #sidebar ul li a:hover {
   color: var(--text-color);
-  background: #fff;
 }
 
 @media (max-width: 768px) {

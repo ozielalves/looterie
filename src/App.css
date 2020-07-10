@@ -3,6 +3,7 @@
   --title-color: #E0DAD7;
   --card-text-color: #000000;
   --text-color: #E1D4D7;
+  --hover-color: #003F6C;
 }
 
 * {
@@ -18,12 +19,12 @@ body {
 }
 
 body, input, button {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif, ;
 }
 
 a, h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.50);
-  font-family: Ubuntu;
+  font-family: 'Montserrat', sans-serif;
 }
 
 

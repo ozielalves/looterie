@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Col, Row, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 import Logo from '../../assets/littleLogo.png';
@@ -18,13 +19,13 @@ const UserNav = () =>{
             <li className="active">
                 <ul className="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">127 Fichas</a>
+                        <Link to="#">127 Fichas</Link>
                     </li>
                     <li>
-                        <a href="#">Editar Perfil</a>
+                        <Link to="#">Editar Perfil</Link>
                     </li>
                     <li>
-                        <a href="#">Sair</a>
+                        <Link to="/">Sair</Link>
                     </li>
                 </ul>
             </li>

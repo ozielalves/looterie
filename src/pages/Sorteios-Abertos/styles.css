@@ -4,103 +4,104 @@
   background: url('../../assets/UserNav-bolinhas.png') no-repeat bottom;
 }
 
+#page-sorteios a{
+  text-decoration: none;
+}
+
+#page-sorteios .bloco {
+  display: -webkit-inline-flex;
+  width: 100%;
+}
+
+#nav .user-navbar {
+  width: 100%;
+  /*float: left;*/
+  padding: 0;
+  list-style: none; 
+  margin: 1em 0 0 0;
+  display: -webkit-inline-flex;
+}
+
+#nav .user-navbar .menu {
+  padding-top: 12px;
+}
+
+#nav .user-navbar img {
+  max-width:90px;
+  max-height:44.318px;
+  width: auto;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+#nav .user-navbar li {
+  float: right; 
+}
+
+#nav .user-navbar li a {
+  display: block;
+  padding: 5px 25px;
+  text-decoration: none;
+  font-size: medium;
+  color: var(--primary-color);
+
+  /*font-weight: bold;*/
+}
+
 #page-sorteios .content {
   width: 100%;
   height: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 30px;
+  /*padding: 0 30px;
 
+  display: -webkit-inline-flex;*/
+}
+
+#page-sorteios .content .buttons {
   display: -webkit-inline-flex;
 }
 
-#page-sorteios .content header {
-  margin: 48px 0 0;
-}
-
-#page-sorteios .content main {
-  flex: 1;
-  max-width: 560px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#page-sorteios .content main h1 {
-  font-size: 54px;
-  color: var(--title-color);
-}
-
-#page-sorteios .content main p {
-  font-size: 24px;
-  margin-top: 24px;
-  line-height: 38px;
-}
-
-#page-sorteios .content main a {
-  width: 100%;
-  max-width: 360px;
-  height: 72px;
-  background: var(--primary-color);
-  border-radius: 8px;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  margin-top: 40px;
-}
-
-#page-sorteios .content main a span {
-  display: block;
-  background: rgba(0, 0, 0, 0.08);
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#page-sorteios .content .buttons .buttonSelected {
+  width: 220px;
+  height: 56px;
+  background: #90878C;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0 16.6px 0 16.6px;
+  align-self: center;
+  margin-top: 10px;
   transition: background-color 0.2s;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
 }
 
-#page-sorteios .content main a span svg {
+#page-sorteios .content .buttons .button{
+  width: 220px;
+  height: 56px;
+  background: #472A44;
   color: #FFF;
-  width: 20px;
-  height: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0 16.6px 0 16.6px;
+  align-self: center;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
 }
 
-#page-sorteios .content main a strong {
-  flex: 1;
-  text-align: center;
-  color: #FFF;
-}
-
-#page-sorteios .content main a:hover {
-  background: var(--primary-color);
+#page-sorteios .content .buttons .button #premio{
+  background: #363C53;
 }
 
 @media(max-width: 900px) {
   #page-sorteios .content {
     align-items: center;
     text-align: center;
-  }
-
-  #page-sorteios .content header {
-    margin: 48px auto 0;
-  }
-
-  #page-sorteios .content main {
-    align-items: center;
-  }
-
-  #page-sorteios .content main h1 {
-    font-size: 42px;
-  }
-
-  #page-sorteios .content main p {
-    font-size: 24px;
   }
 }
 
