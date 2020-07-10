@@ -11,9 +11,7 @@
   margin: 0 auto;
   padding: 0 30px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: -webkit-inline-flex;
 }
 
 #page-sorteios .content header {
@@ -107,5 +105,4 @@
 }
 
 /* SIDENAV CSS */
-
 

@@ -1,31 +1,36 @@
-aside {
-  width: 20vw;
-  height: 100vh;
+#sidebar {
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 100vh;
+  
+  color: #fff;
+  text-align: center;
 }
 
-#sidebar-toggle {
-  display: none;
+#sidebar .sidebar-header {
+  padding: 10px;
 }
 
-.toggle-btn {
-  display: none;
-  width: 4em;
-  height: 2em;
-  position: relative;
-  cursor: pointer;
-  background: yellow;
-  padding: 2px;
+#sidebar ul h3 {
+  color: var(--primary-color);
+  padding: 10px;
+  
 }
 
-@media(max-width:1200px) {
-  .toggle-btn {
-    display: block;
-  }
-  aside {
-    width: 0vw;
-    transition: width 0.25s ease-out;
-  }
-  #sidebar-toggle:checked+aside {
-    width: 20vw;
+#sidebar ul li a {
+  padding: 5px;
+  font-size: 0.9em;
+  display: block;
+  text-decoration: none;
+  color: var(--primary-color)
+}
+#sidebar ul li a:hover {
+  color: var(--text-color);
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+      margin-left: -250px;
   }
 }
