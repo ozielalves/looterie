@@ -2,6 +2,7 @@
   --primary-color: #CB9B77;
   --title-color: #E0DAD7;
   --card-text-color: #000000;
+  --card-span-color: #FFFFFF;
   --text-color: #E1D4D7;
   --hover-color: #003F6C;
 }
@@ -30,5 +31,10 @@ a, h1, h2, h3, h4, h5, h6 {
 
 p {
   color: var(--card-text-color);
-  font-family: Ubuntu;
+  font-family: 'Montserrat', sans-serif;
+}
+
+span {
+  color: var(--card-span-color);
+  font-family: 'Montserrat', sans-serif;
 }
