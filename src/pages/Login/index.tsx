@@ -19,7 +19,7 @@ const Login = () => {
         <div className="bloco">
           <img id="logo" src={logo} alt="Loterie"/>
 
-          <form action="http://localhost:3000/sorteiosabertos">
+          <form action="/sorteiosabertos">
             <div className="form-header">
               <Link id="arrow" to="/">
                 <BsArrowLeft />
