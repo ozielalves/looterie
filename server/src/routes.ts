@@ -84,14 +84,14 @@ routes.get('/sorteiospremiados/:id_user', async (request, response) => {
   response.json(serializedSorteiosPremiados);
 });
 
-routes.get('/sorteiosapostadores/:id_sorteio', async (request, response) => {
+routes.get('/sorteioapostadores/:id_sorteio', async (request, response) => {
   const id = Number(request.params.id_sorteio);
     
   const apostadores = await knex('aspotas')
-  .where('id_sorteio', '=', id)
   .join('fichas', 'fichas.id', 'id_fichas')
-  .join('users', 'users.id', 'id_user')
-  .select('name', 'lastname', 'id_user');
+  .join('users', 'users.id', 'fichas.id_user')
+  .where('id_sorteio', '=', id)
+  .select('*');
 
   response.json(apostadores);
 });

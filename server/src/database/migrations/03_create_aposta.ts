@@ -7,10 +7,11 @@ export async function up(knex: Knex) { // CRIAR A TABELA
       .references('id')
       .inTable('sorteios');
     table.integer('id_ficha')
+      .primary()
       .notNullable()
       .references('id')
       .inTable('fichas');
-    table.integer('premiado', 1).notNullable();
+    table.integer('premiado', 1);
 })
 }
 
