@@ -3,12 +3,14 @@ import knex from './database/connection';
 import UsersController from './controllers/UsersConstroller';
 import FichasController from './controllers/FichasController';
 import SorteiosController from './controllers/SorteiosConstroller';
+import ApostasController from './controllers/ApostasController';
 
 const routes = express.Router();
 
 const userController = new UsersController();
-const fichasController = new FichasController();
+const fichasController = new FichasController(); 
 const sorteiosController = new SorteiosController();
+const apostasController = new ApostasController();
 
 
 routes.get('/sorteiosabertos', sorteiosController.showOpen);
@@ -32,5 +34,7 @@ routes.get('/users/:id', userController.showUser);
 routes.get('/users/', userController.show);
 
 routes.post('/users', userController.create);
+
+routes.post('/apostas', apostasController.create);
 
 export default routes;
