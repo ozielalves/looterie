@@ -40,6 +40,15 @@ class UsersController {
     response.json(users);
   }
 
+  async update (request:Request, response: Response) {
+    const { name, lastname, password, email } = request.body;
+    const id = request.params.id;
+    
+    await knex('users').where({'id' : id}).update({ name, lastname, password, email });
+    
+    response.json({ success: true });
+  }
+
   /*
   async index(request: Request, response: Response) {
     // Filtro: {Query Params}

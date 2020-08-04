@@ -119,6 +119,15 @@ class SorteiosController {
     
     return response.json({ success: true })
   }
+
+  async update (request: Request, response: Response) {
+    const id = request.params.id;
+    const { title, description, image, data_sorteio } = request.body;
+    
+    await knex('sorteios').where({ 'id' : id }).update({ title, description, image, data_sorteio });
+
+    response.json({ success:true });
+  }
 }
 
 
