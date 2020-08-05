@@ -15,7 +15,9 @@ const Home = () => {
             <li><Link to="cadastro">CADASTRE-SE</Link></li>
           </ul>
         </div>
-        <img src={logo} alt="Loterie"/>
+        <div className="logo-container">
+          <img src={logo} alt="Loterie"/>
+        </div>
       </div>
     </div>
   );
