@@ -11,6 +11,7 @@ O projeto tem o intuito de descrever o sistema de gerenciamento de sorteios, Loo
 
 O objetivo do sistema é trazer uma nova proposta de sorteio virtual, auxiliar, e garantir um maior controle no que diz respeito a participação ativa nos sorteios. De forma simplificada, o sistema elimina dores de cabeça do administrador e assegura dados verdadeiros e honestos, com resultados fidedignos. A plataforma Looterie promove ainda uma maneira monetizada de realizar sorteios, a parte, diretamente do aplicativo.
 
+### Pré-Visualização do projeto
 > [Protótipo no Figma](https://www.figma.com/file/z4v1fIAAQgzDgP4JHV7F6U/Looterie?node-id=0%3A1)
 
 ## Authorship
