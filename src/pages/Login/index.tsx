@@ -16,9 +16,10 @@ const Login = () => {
   return(
     <div id="page-login">
       <div className="content">
-        <div className="bloco">
+        <div className="login-logo-container">
           <img id="logo" src={logo} alt="Loterie"/>
-
+        </div>
+        <div className="login-form">
           <form action="/sorteiosabertos">
             <div className="form-header">
               <Link id="arrow" to="/">

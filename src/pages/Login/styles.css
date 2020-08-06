@@ -4,96 +4,47 @@
   background: url('../../assets/Login-bolinhas.png') no-repeat bottom;
 }
 
-#logo {
-  margin-top: 5.40em;
-}
-
-#page-login .form-header #arrow svg {
-  font-size: 2.5em;
-  margin-right: 0.5em;
-}
-
-.form-header {
-  display: -webkit-inline-box;
-}
-
-
-#page-login .bloco {
-  display: -webkit-inline-box;
+.login-logo-container {
+  margin-top: 5.40rem;
+  justify-self: flex-start;
 }
 
 #page-login .content {
   width: 100%;
   height: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 30px;
 
+  display: grid;
+  grid-template-rows: 360px 1fr;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-areas: "logo form" ;
+}
+
+.login-logo-container {
+  grid-area: logo;
+}
+
+.login-form{
+  grid-area: form;
+}
+
+.login-form {
+  margin: 5.40em 0 0 0;
+}
+
+#page-login .form-header #arrow svg {
+  font-size: 2.5em;
+  margin-right: 1em;
+}
+
+.form-header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
 }
-
-
-#page-login .content main {
-  flex: 2;
-  max-width: 560px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#page-login .content main h1 {
-  font-size: 54px;
-  color: var(--title-color);
-}
-
-#page-login .content main p {
-  font-size: 24px;
-  margin-top: 24px;
-  line-height: 38px;
-}
-
-#page-login .content main a {
-  width: 100%;
-  max-width: 360px;
-  height: 72px;
-  background: var(--primary-color);
-  border-radius: 8px;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  margin-top: 40px;
-}
-
-#page-login .content main a span {
-  display: block;
-  background: rgba(0, 0, 0, 0.08);
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-}
-
-
-#page-login .content main a:hover {
-  background: var(--primary-color);
-}
-
 
 #page-login form {
-  /*margin: 80px auto;*/
-  margin: 5.40em 0 0 22em;
-  max-width: 612px;
-  /*border-radius: 8px;*/
-  
   display: flex;
   flex-direction: column;
 }
@@ -112,7 +63,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  /*margin-bottom: 24px;*/
 }
 
 #page-login fieldset #legend3 {
@@ -133,10 +83,9 @@
 }
 
 #page-login #redes-sociais {
-  display: block;
+  display: flex;
   margin-top: 0.3em;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center ;
 }
 
 #page-login li {
@@ -144,7 +93,6 @@
   padding: 0em 0.6em 0em 0.6em;
   text-decoration: none;
   font-size: xx-large;
-  /*font-weight: bold;*/
 }
 
 
@@ -152,7 +100,6 @@
 #page-login form .field input[type=password] {
   flex: 1;
   background: rgba(255, 255, 255, 0.20);
-  /*border-radius: 8px;*/
   border: 0;
   padding: 16px 24px;
   font-size: 16px;
@@ -165,7 +112,6 @@
 
 #page-login form .field :disabled {
   cursor: not-allowed;
-  
 }
 
 
@@ -182,6 +128,7 @@
   transition: background-color 0.2s;
   cursor: pointer;
   -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
+  box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
 }
 
 #page-login form button:hover {
@@ -189,24 +136,61 @@
 }
 
 @media(max-width: 900px) {
+  #page-login {
+    height: 100vh;
+    background: url('../../assets/Plano-bolinhas.png') no-repeat bottom;
+  }
+
   #page-login .content {
-    align-items: center;
+    max-width: 900px;
+    justify-content: center;
     text-align: center;
+    margin: 0;
+    padding: 0;
+   
+
+    display: grid;
+    grid-template-rows: 180px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "logo"
+      "form" ;
   }
 
-  #page-login .content header {
-    margin: 48px auto 0;
+  .login-logo-container {
+    grid-area: logo;
+    justify-self: center;
   }
 
-  #page-login .content main {
-    align-items: center;
+  .login-form{
+    grid-area: form;
+    justify-self: center;
   }
 
-  #page-login .content main h1 {
-    font-size: 42px;
+  .login-logo-container  img {
+    width: 200px;
   }
 
-  #page-login .content main p {
-    font-size: 24px;
-  }
+  #page-login form .field input[type=email],
+  #page-login form .field input[type=password] {
+    background: rgba(255, 255, 255);
+    color: #111111;
+}
+
+#page-login form .field input::placeholder {
+  color: #111111;
+}
+
+#page-login form hr {
+  border: 0.01px solid rgba(255, 255, 255, 0.50);
+}
+
+.login-form h4 {
+  color: #ffffff;
+}
+
+#redes-sociais a {
+  color: #ffffff;
+}
+
 }

@@ -63,7 +63,7 @@ a:hover {
       "logo" ;
   }
 
-  .logo-container {
+  .home-logo-container {
     grid-area: logo;
   }
 
@@ -80,7 +80,7 @@ a:hover {
   }
 
 
-  .logo-container  img {
+  .home-logo-container  img {
     width: 250px;
   }
 }
