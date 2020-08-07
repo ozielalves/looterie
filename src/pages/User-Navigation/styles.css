@@ -14,7 +14,6 @@
 #sidebar ul h3 {
   color: var(--primary-color);
   padding: 10px;
-  
 }
 
 #sidebar ul li a {
@@ -28,10 +27,12 @@
   color: var(--text-color);
 }
 
-@media (max-width: 768px) {
-  #sidebar {
-      margin-left: -250px;
-  }
+.nav-collapsible {
+  display: none;
+}
+
+.mobile-header {
+  display: none;
 }
 
 /* Page Sorteios CSS */
@@ -42,12 +43,15 @@
   background: url('../../assets/UserNav-bolinhas.png') no-repeat bottom;
 }
 
-#page-sorteios a {
-  text-decoration: none;
-}
-
 #page-sorteios .content {
   margin-left: 30px;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+#page-sorteios a {
+  text-decoration: none;
 }
 
 #page-sorteios .content ul li a:hover {
@@ -55,15 +59,16 @@
 }
 
 #page-sorteios .bloco {
-  display: -webkit-inline-flex;
+  display: flex;
   width: 100%;
 }
 
-#page-sorteios .content {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+.content .menu {
+  display: flex;
+  justify-content: center;
 }
+
+.content
 
 /* User-Navbar CSS*/
 
@@ -103,7 +108,7 @@
 /* Buttons CSS */
 
 #page-sorteios .content .buttons {
-  display: -webkit-inline-flex;
+  display: inline-flex;
   text-align: center;
 }
 
@@ -129,7 +134,6 @@
   padding-top: 18px;
   transition: background-color 0.2s;
   cursor: pointer;
-  /*-webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);*/
 }
 
 #page-sorteios .content .buttons .button {
@@ -166,9 +170,9 @@
 #page-sorteios .content .sorteiosPremiado {
   background: rgb(54,60,83, 0.80);
   width: 100%;
-  height: 100%;
-  min-height: 558px;
-  -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
+  overflow-y: auto;
+  max-height: 75vh;
+  min-height: 75vh;
   box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
   display: -webkit-inline-box
 } 
@@ -176,11 +180,11 @@
 #page-sorteios .content .sorteios {
   background: rgb(205,205,205, 0.40);
   width: 100%;
-  height: 100%;
-  min-height: 558px;
-  -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
+  overflow-y: auto;
+  max-height: 75vh;
+  min-height: 75vh;
   box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
-  display: -webkit-inline-box
+  display: inline-block
 }
 
 #page-sorteios .content .sorteios .card-sorteio , .sorteiosPremiado .card-sorteio {
@@ -220,8 +224,19 @@
 }
 
 @media(max-width: 900px) {
-  #page-sorteios .content {
-    align-items: center;
+  #nav, #sidebar { display: none; }
+  
+  .nav-collapsible { 
+    display: grid;
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 100vh;
     text-align: center;
-  }
+
+    grid-template-rows: 150px 2fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "avatar info"
+      "menu-list"; 
+  } 
 }
