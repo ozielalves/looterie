@@ -25,7 +25,7 @@ const Login = () => {
               <Link id="arrow" to="/">
                 <BsArrowLeft />
               </Link>
-              <h1>ENTRAR</h1>
+              <h1 id="login-title" >ENTRAR</h1>
             </div>
             <fieldset>
               <div className="field">

@@ -157,6 +157,16 @@
       "form" ;
   }
 
+  #page-login .form-header #arrow svg {
+    font-size: 2.5em;
+    margin-right: 1.5em;
+  }
+
+  #page-login form h1 {
+    font-size: large;
+    align-self: center;
+  }
+
   .login-logo-container {
     grid-area: logo;
     justify-self: center;
@@ -175,22 +185,22 @@
   #page-login form .field input[type=password] {
     background: rgba(255, 255, 255);
     color: #111111;
-}
+  }
 
-#page-login form .field input::placeholder {
-  color: #111111;
-}
+  #page-login form .field input::placeholder {
+    color: #111111;
+  }
 
-#page-login form hr {
-  border: 0.01px solid rgba(255, 255, 255, 0.50);
-}
+  #page-login form hr {
+    border: 0.01px solid rgba(255, 255, 255, 0.50);
+  }
 
-.login-form h4 {
-  color: #ffffff;
-}
+  .login-form h4 {
+    color: #ffffff;
+  }
 
-#redes-sociais a {
-  color: #ffffff;
-}
+  #redes-sociais a {
+    color: #ffffff;
+  }
 
 }

@@ -47,9 +47,10 @@ const Cadastro = () => {
   return(
     <div id="page-cadastro">
       <div className="content">
-        <div className="bloco">
+        <div className="cadastro-logo-container">
           <img id="logo" src={logo} alt="Loterie"/>
-
+        </div>
+        <div className="cadastro-form">
           <form onSubmit={handleSubmition}>
             <div className="form-header">
               <Link id="arrow" to="/">

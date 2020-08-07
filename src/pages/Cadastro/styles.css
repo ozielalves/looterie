@@ -4,20 +4,13 @@
   background: url('../../assets/Cadastro-bolinhas.png') no-repeat bottom;
 }
 
-
 #page-cadastro .form-header #arrow svg {
   font-size: 2.5em;
   margin-right: 0.5em;
 }
 
 .form-header {
-  display: -webkit-inline-box;
-}
-
-
-#page-cadastro .bloco {
-  display: -webkit-inline-box;
-  margin-top: -2.6em;
+  display: flex;
 }
 
 #page-cadastro .content {
@@ -27,9 +20,20 @@
   margin: 0 auto;
   padding: 0 30px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "logo form" ;
+}
+
+.cadastro-logo-container {
+  grid-area: logo;
+  margin-top: 5.2em;
+}
+
+.cadastro-form {
+  grid-area: form;
+  margin-top: 5.2em;
 }
 
 
@@ -87,13 +91,10 @@
 
 
 #page-cadastro form {
-  /*margin: 80px auto;*/
-  margin: 5.40em 0 0 22em;
   max-width: 612px;
-  /*border-radius: 8px;*/
-  
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 #page-cadastro form h1 {
@@ -110,7 +111,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  /*margin-bottom: 24px;*/
 }
 
 
@@ -142,11 +142,10 @@
   border: 0.01px solid rgba(255, 255, 255, 0.50);
 }
 
-#page-cadastro form fieldset ul .logos {
-  display: block;
+#page-cadastro ul.logos {
+  display: flex;
   margin-top: 0.3em;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
 }
 
 #page-cadastro .content form .logos li {
@@ -154,7 +153,6 @@
   padding: 0em 0.6em 0em 0.6em;
   text-decoration: none;
   font-size: xx-large;
-  /*font-weight: bold;*/
 }
 
 #page-cadastro form .field input[type=text],
@@ -163,7 +161,6 @@
 #page-cadastro form .field input[type=password] {
   flex: 1;
   background: rgba(255, 255, 255, 0.20);
-  /*border-radius: 8px;*/
   border: 0;
   padding: 16px 24px;
   font-size: 16px;
@@ -178,7 +175,6 @@
   cursor: not-allowed;
   
 }
-
 
 #page-cadastro form button {
   width: 260px;
@@ -202,24 +198,96 @@
 
 
 @media(max-width: 900px) {
+  #page-cadastro {
+    height: 100vh;
+    background: url('../../assets/Plano-bolinhas-cadastro.png') no-repeat bottom;
+  }
+
   #page-cadastro .content {
-    align-items: center;
+    max-width: 900px;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+   
+
+    display: grid;
+    grid-template-rows: 1fr 3.5fr;
+    grid-template-columns: 2fr;
+    grid-template-areas: 
+      "logo"
+      "form" ;
+  }
+
+  #page-cadastro .form-header #arrow svg {
+    font-size: 2.5em;
+    margin-right: 0.9em;
+  }
+
+  #page-cadastro form h1 {
+    font-size: large;
+    align-self: center;
+  }
+
+  .cadastro-logo-container {
+    grid-area: logo;
+    justify-self: center;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .cadastro-form {
+    grid-area: form;
+    justify-self: center;
+    margin-top: 0;
+  }
+
+  .cadastro-form h3,h4 {
+    font-size: medium;
+  }
+
+  .cadastro-form #legend1 {
+    visibility: collapse;
+  }
+
+  #page-cadastro fieldset #legend1 {
+    margin-top: 0;
+    text-align: center;
+  }
+  #page-cadastro fieldset #legend2 {
+    margin-top: 0.5em;
+    text-align: center;
+  }
+  #page-cadastro fieldset #legend3 {
+    margin-top: 0.5em;
     text-align: center;
   }
 
-  #page-cadastro .content header {
-    margin: 48px auto 0;
+  .cadastro-logo-container  img {
+    width: 170px;
   }
 
-  #page-cadastro .content main {
-    align-items: center;
+  #page-cadastro form .field input[type=email],
+  #page-cadastro form .field input[type=password],
+  #page-cadastro form .field input[type=text] {
+    background: rgba(255, 255, 255);
+    color: #111111;
   }
 
-  #page-cadastro .content main h1 {
-    font-size: 42px;
+  #page-cadastro form .field input::placeholder {
+    color: #111111;
   }
 
-  #page-cadastro .content main p {
-    font-size: 24px;
+  #page-cadastro form hr {
+    border: 0.01px solid rgba(255, 255, 255, 0.50);
   }
+
+  .cadastro-form h4 {
+    color: #ffffff;
+  }
+
+  #redes-sociais a {
+    color: #ffffff;
+  }
+
 }
