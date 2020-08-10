@@ -248,6 +248,7 @@
 
   .cadastro-form #legend1 {
     visibility: collapse;
+    margin: -1.8rem;
   }
 
   #page-cadastro fieldset #legend1 {

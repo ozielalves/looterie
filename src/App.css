@@ -38,3 +38,19 @@ span {
   color: var(--card-span-color);
   font-family: 'Montserrat', sans-serif;
 }
+
+/* Scroolbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.50); 
+}
+
+::-webkit-scrollbar-track-piece, ::-webkit-scrollbar-track-piece {
+  background: rgba(255, 255, 255, 0); 
+}
