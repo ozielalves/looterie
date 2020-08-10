@@ -28,12 +28,6 @@
   color: var(--text-color);
 }
 
-@media (max-width: 768px) {
-  #sidebar {
-      margin-left: -250px;
-  }
-}
-
 /* Page Sorteios CSS */
 
 #page-sorteios {
@@ -219,9 +213,8 @@
   list-style-type: none;
 }
 
-@media(max-width: 900px) {
-  #page-sorteios .content {
-    align-items: center;
-    text-align: center;
+@media (max-width: 900px) {
+  #sidebar {
+      margin-left: -250px;
   }
 }
