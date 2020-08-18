@@ -1,11 +1,19 @@
 import React from "react";
-import { Container, Col, Row, Nav } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
-import Logo from '../../assets/littleLogo.png';
+//import Logo from '../../assets/littleLogo.png';
 import Avatar from '../../assets/Avatar.png';
 
+/*
+function toggle () {
+    var element = document.getElementById('sidebar');
+    element.classList.toggle("mySidebar");
+    var a = document.getElementsByTagName('hideThis');
+    a.classList.toggle("hidden");
+  }
+*/
 
 const UserNav = () =>{
   return(

@@ -42,6 +42,8 @@ const SorteiosFechados = () => {
               <div id="premio" className="button">Sorteios Premiados</div>
             </Link>
           </div>
+
+          
           <div className="sorteios">
             <div className="card-sorteio" id="aberto">
               <div className="card-image">

@@ -28,7 +28,7 @@ const SorteiosAbertos = () => {
             </ul>
           </div>
           
-          <div className="nav-collapsible">
+          <div className="mySidebar">
             <div className="avatar"></div>
             <div className="menu-list">
               <Link to="login">PESQUISAR</Link>
@@ -42,10 +42,10 @@ const SorteiosAbertos = () => {
             </div>
           </div>
 
-          <div className="mobile-header">
-            <Link to="sorteiosabertos"><img src={littleLogo} alt="logo"/></Link>
-            <h2 className="welcome"> Bem vindo(a), <strong>OZIEL</strong></h2>
-            <BsList/>
+          <div className="hidden">
+              <Link to="sorteiosabertos"><img src={littleLogo} alt="logo"/></Link>
+              <h2 className="welcome"> Bem vindo(a), <strong>OZIEL</strong></h2>
+              <BsList/>
           </div>
           
           <div className="folder-sorteios">

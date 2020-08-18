@@ -27,17 +27,6 @@
   color: var(--text-color);
 }
 
-<<<<<<< HEAD
-=======
-.nav-collapsible {
-  display: none;
-}
-
-.mobile-header {
-  display: none;
-}
-
->>>>>>> 9822c078d41edee4a7a94b1cfe64390b94d642b2
 /* Page Sorteios CSS */
 
 #page-sorteios {
@@ -226,8 +215,9 @@
   list-style-type: none;
 }
 
+.hidden, .mySidebar { display: none; }
+
 @media(max-width: 900px) {
-  #nav, #sidebar { display: none; }
   
   .nav-collapsible { 
     display: grid;
