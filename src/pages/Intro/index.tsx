@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React, { useState, useEffect } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './styles.css';
 
@@ -14,12 +14,19 @@ const Intro = () => {
   const [registerDisplay, setRegisterDisplay] = useState(false);
 
   const toggleLoginFormDisplay = () =>{
+    console.log('toggled')
     loginDisplay ? setLoginDisplay(false) : setLoginDisplay(true); setRegisterDisplay(false);
+    console.log(loginDisplay)
   }
   const toggleRegisterFormDisplay = () =>{
+    console.log('toggled')
     registerDisplay ? setRegisterDisplay(false) : setRegisterDisplay(true); setLoginDisplay(false);
+    console.log(registerDisplay)
   }
 
+  useEffect (() => {
+
+  });
 
   return(
     <div id="page-intro">
@@ -32,11 +39,14 @@ const Intro = () => {
       <div className={loginDisplay || registerDisplay ? 'intro-logo-container smaller' : 'intro-logo-container'}>
         <img src={logo} alt="Loterie"/>
       </div>
-      
-      <CSSTransition>
-          {loginDisplay ? <Login /> : null}
-          {registerDisplay ? <Register /> : null}
+      <TransitionGroup>
+      <CSSTransition in={loginDisplay} timeout={300} classNames="formTransition">
+        <Login toggle={toggleLoginFormDisplay}/>
       </CSSTransition>
+      <CSSTransition in={registerDisplay} timeout={300} classNames="formTransition">
+        <Register toggle={toggleLoginFormDisplay}/>
+      </CSSTransition> 
+      </TransitionGroup>
     </div>
   );
 }

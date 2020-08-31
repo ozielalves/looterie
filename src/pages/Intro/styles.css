@@ -59,6 +59,23 @@ li:hover {
   transition: all 0.5s ease;
 }
 
+/* Transitions */
+
+.formTransition-enter {
+  opacity: 0;
+}
+.formTransition-enter-active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.formTransition-exit {
+  opacity: 1;
+}
+.formTransition-exit-active {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 @media (max-width: 900px) {
   #page-intro {
     background: url("../../assets/Plano-bolinhas-cadastro.png") no-repeat bottom;

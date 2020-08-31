@@ -1,19 +1,18 @@
 import React, { FormEvent } from 'react';
 import { BsArrowLeft } from "react-icons/bs";
-import { Link } from 'react-router-dom';
 import { AiFillInstagram, AiFillTwitterCircle, AiFillFacebook} from "react-icons/ai";
 import { FaBloggerB } from 'react-icons/fa'
 
 import './styles.css';
 
-const Login = () => {
+const Login = (props) => {
   return(
     <div className="login-form">
       <form action="/sorteiosabertos">
         <div className="form-header">
-          <Link id="arrow" to="/">
+          <div id="arrow" onClick={props.toggleLoginFormDisplay}>
             <BsArrowLeft />
-          </Link>
+          </div>
           <h1 id="login-title">ENTRAR</h1>
         </div>
         <fieldset>
@@ -41,10 +40,10 @@ const Login = () => {
           
           <div id="redes-sociais">
             <ul className="logos">
-              <li><a href="#"><AiFillTwitterCircle /></a></li>
-              <li><a href="#"><FaBloggerB /></a></li>
-              <li><a href="#"><AiFillInstagram /></a></li>
-              <li><a href="#"><AiFillFacebook /></a></li>
+              <li><a href="/"><AiFillTwitterCircle /></a></li>
+              <li><a href="/"><FaBloggerB /></a></li>
+              <li><a href="/"><AiFillInstagram /></a></li>
+              <li><a href="/"><AiFillFacebook /></a></li>
               </ul>
           </div>
         </fieldset>

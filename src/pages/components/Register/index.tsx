@@ -6,7 +6,7 @@ import { FaBloggerB } from 'react-icons/fa'
 
 import './styles.css';
 
-const Register = () => {
+const Register = (props) => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -114,10 +114,10 @@ const Register = () => {
           
           <div id="redes-sociais">
             <ul className="logos">
-              <li><a href="#"><AiFillTwitterCircle /></a></li>
-              <li><a href="#"><FaBloggerB /></a></li>
-              <li><a href="#"><AiFillInstagram /></a></li>
-              <li><a href="#"><AiFillFacebook /></a></li>
+              <li><a href="/"><AiFillTwitterCircle /></a></li>
+              <li><a href="/"><FaBloggerB /></a></li>
+              <li><a href="/"><AiFillInstagram /></a></li>
+              <li><a href="/"><AiFillFacebook /></a></li>
               </ul>
           </div>
         </fieldset>
