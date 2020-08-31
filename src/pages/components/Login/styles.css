@@ -1,5 +1,8 @@
 .login-form{
   grid-area: form;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .login-form .form-header #arrow svg {
@@ -15,6 +18,7 @@
 .login-form form {
   display: flex;
   flex-direction: column;
+ 
 }
 
 .login-form form h1 {
@@ -117,6 +121,7 @@
   .login-form{
     grid-area: form;
     justify-self: center;
+    margin: 0;
   }
 
   .login-form form .field input[type=email],
