@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import UserNav from '../User-Navigation';
+import UserNav from '../components/User-Navigation';
 import littleLogo from '../../assets/littleLogo.png';
 import Sorteio1 from'../../assets/Sorteio1.png'
 import Sorteio2 from'../../assets/Sorteio2.png'

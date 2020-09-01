@@ -32,7 +32,7 @@
 #page-sorteios {
   height: 100vh;
 
-  background: url('../../assets/UserNav-bolinhas.png') no-repeat bottom;
+  background: url('../../../assets/UserNav-bolinhas.png') no-repeat bottom;
 }
 
 #page-sorteios .content {

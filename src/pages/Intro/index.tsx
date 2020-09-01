@@ -43,7 +43,7 @@ const Intro = () => {
   });
 
   return(
-    <div id="page-intro">
+    <div id="page-intro" className={loginDisplay || registerDisplay ? "mobileBg" : "desktopBg"}>
       <div id="nav">
         <ul className="navbar">
           <li onClick={toggleLoginFormDisplay}>ENTRAR</li>
