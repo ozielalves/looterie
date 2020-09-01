@@ -13,7 +13,7 @@
 }
 
 .login-form .form-header #arrow svg:hover {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .form-header {
@@ -60,10 +60,10 @@
   border: 0.01px solid rgba(255, 255, 255, 0.50);
 }
 
-.login-form #redes-sociais {
+.login-form ul.logos {
   display: flex;
   margin-top: 0.3em;
-  justify-content: center ;
+  justify-content: center;
 }
 
 .login-form li {
@@ -122,6 +122,7 @@
   .login-form form h1 {
     font-size: large;
     align-self: center;
+    color: #ffffff;
   }
 
   .login-form{
@@ -152,4 +153,8 @@
     color: #ffffff;
   }
 
+}
+
+@media (max-width: 400px) {
+  
 }

@@ -6,7 +6,7 @@ import { FaBloggerB } from 'react-icons/fa'
 
 import './styles.css';
 
-const Register = (props) => {
+const Register = ({toggle}) => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -44,9 +44,9 @@ const Register = (props) => {
     <div className="register-form">
       <form onSubmit={handleSubmition}>
         <div className="form-header">
-          <Link id="arrow" to="/">
+          <div id="arrow" onClick={toggle}>
             <BsArrowLeft />
-          </Link>
+          </div>
           <h1>CADASTRE-SE</h1>
         </div>
         <fieldset>

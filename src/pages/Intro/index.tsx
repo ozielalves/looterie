@@ -8,24 +8,38 @@ import Register from '../components/Register'
 
 import logo from '../../assets/Logo.png';
 
+
 const Intro = () => {
 
   const [loginDisplay, setLoginDisplay] = useState(false);
   const [registerDisplay, setRegisterDisplay] = useState(false);
 
   const toggleLoginFormDisplay = () =>{
-    console.log('toggled')
-    loginDisplay ? setLoginDisplay(false) : setLoginDisplay(true); setRegisterDisplay(false);
-    console.log(loginDisplay)
+    if( !loginDisplay ) {
+      if( registerDisplay ){
+        setRegisterDisplay(false);
+        setTimeout(() => {setLoginDisplay(true)}, 500);
+      }else {
+        setLoginDisplay(true);
+      }
+    } else {
+      setLoginDisplay(false);
+    }
   }
   const toggleRegisterFormDisplay = () =>{
-    console.log('toggled')
-    registerDisplay ? setRegisterDisplay(false) : setRegisterDisplay(true); setLoginDisplay(false);
-    console.log(registerDisplay)
+    if( !registerDisplay ){
+      if( loginDisplay ){
+        setLoginDisplay(false);
+        setTimeout(() => {setRegisterDisplay(true)}, 500);
+      }else {
+        setRegisterDisplay(true);
+      }
+    }else {
+      setRegisterDisplay(false);
+    }
   }
 
   useEffect (() => {
-
   });
 
   return(
@@ -36,17 +50,23 @@ const Intro = () => {
           <li onClick={toggleRegisterFormDisplay}>CADASTRE-SE</li>
         </ul>
       </div>
-      <div className={loginDisplay || registerDisplay ? 'intro-logo-container smaller' : 'intro-logo-container'}>
-        <img src={logo} alt="Loterie"/>
+      <div className="intro-logo-container">
+          {
+            loginDisplay || registerDisplay ? 
+              <img src={logo} alt="Loterie" className="smallLogo"/> : 
+              <img src={logo} alt="Loterie"/>
+          }
       </div>
-      <TransitionGroup>
-      <CSSTransition in={loginDisplay} timeout={300} classNames="formTransition">
-        <Login toggle={toggleLoginFormDisplay}/>
-      </CSSTransition>
-      <CSSTransition in={registerDisplay} timeout={300} classNames="formTransition">
-        <Register toggle={toggleLoginFormDisplay}/>
-      </CSSTransition> 
-      </TransitionGroup>
+      <div className="form">
+        <TransitionGroup>
+          {loginDisplay ? <CSSTransition in={loginDisplay} timeout={300} classNames="formTransition">
+            <Login toggle={toggleLoginFormDisplay}/>
+          </CSSTransition> : null}
+          {registerDisplay ? <CSSTransition in={registerDisplay} timeout={300} classNames="formTransition">
+            <Register toggle={toggleRegisterFormDisplay}/>
+          </CSSTransition> : null}
+        </TransitionGroup>
+      </div>
     </div>
   );
 }

@@ -10,11 +10,11 @@
   font-size: 2.5em;
   margin-right: 1em;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .register-form .form-header #arrow svg:hover {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.50);
 }
 
 .form-header {
@@ -79,6 +79,10 @@
   justify-content: center;
 }
 
+.register-form ul.logos li:hover {
+  color: rgba(255, 255, 255, 0.50);
+}
+
 .register-form form .logos li {
   display: inline;
   padding: 0em 0.6em 0em 0.6em;
@@ -116,7 +120,6 @@
   font-size: 16px;
   border: 0;
   align-self: center;
-  margin-top: 10px;
   transition: background-color 0.2s;
   cursor: pointer;
   -webkit-box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
@@ -136,8 +139,12 @@
   }
 
   .register-form form h1 {
-    font-size: large;
+    font-size: larger;
     align-self: center;
+  }
+
+  .register-form form h3 {
+    color: #ffffff;
   }
 
   .nameInputs {
@@ -192,10 +199,6 @@
   .register-form fieldset #legend3 {
     margin-top: 0.5em;
     text-align: center;
-  }
-
-  .cadastro-logo-container  img {
-    width: 170px;
   }
 
   .register-form form .field input[type=email],

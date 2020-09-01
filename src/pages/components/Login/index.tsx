@@ -5,12 +5,12 @@ import { FaBloggerB } from 'react-icons/fa'
 
 import './styles.css';
 
-const Login = (props) => {
+const Login = ({toggle}) => {
   return(
     <div className="login-form">
       <form action="/sorteiosabertos">
         <div className="form-header">
-          <div id="arrow" onClick={props.toggleLoginFormDisplay}>
+          <div id="arrow" onClick={toggle}>
             <BsArrowLeft />
           </div>
           <h1 id="login-title">ENTRAR</h1>
