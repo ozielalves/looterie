@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './styles.css';
 //import Logo from '../../assets/littleLogo.png';
-import Avatar from '../../assets/Avatar.png';
+import Avatar from '../../../assets/Avatar.png';
 
 /*
 function toggle () {

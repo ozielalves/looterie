@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState, ChangeEvent } from 'react';
 import { BsArrowLeft } from "react-icons/bs";
 import { AiFillInstagram, AiFillTwitterCircle, AiFillFacebook} from "react-icons/ai";
 import { FaBloggerB } from 'react-icons/fa'
@@ -6,9 +6,37 @@ import { FaBloggerB } from 'react-icons/fa'
 import './styles.css';
 
 const Login = ({toggle}) => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+
+  function handleImputChange(event: ChangeEvent<HTMLInputElement>) {
+    const { name, value} = event.target;
+
+    setFormData({ ...formData, [name]: value });
+  }
+
+  async function handleSubmition(event: FormEvent) {
+    event.preventDefault();
+
+    const { email, password } = formData;
+    
+    const data = {
+      email,
+      password
+    }
+
+    console.log(data);
+
+    //await api.post('points', data);
+
+    alert(`Bem-Vindo ${data.email}`);
+  }
+
   return(
     <div className="login-form">
-      <form action="/sorteiosabertos">
+      <form onSubmit={handleSubmition}>
         <div className="form-header">
           <div id="arrow" onClick={toggle}>
             <BsArrowLeft />

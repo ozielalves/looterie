@@ -1,0 +1,25 @@
+#home {
+  height: 92vh;
+  background: url("../../assets/UserNav-bolinhas.png") no-repeat bottom;
+}
+
+#home .home-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#home .home-header .burguer {
+  display: none;
+  cursor: pointer;
+}
+
+#home .home-header .burguer div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/*# sourceMappingURL=styles.css.map */

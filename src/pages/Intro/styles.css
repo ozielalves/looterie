@@ -9,7 +9,7 @@
     "logo form";
 }
 
-.desktopBg {
+.desktopBg, .mobileBg {
   background: url("../../assets/Home-bolinhas.png") no-repeat bottom;
 }
 
@@ -130,7 +130,6 @@ li:hover {
     justify-content: center;
   }
 }
-
 @media (max-width: 400px) {
   #nav li {
     font-size: smaller 
@@ -142,6 +141,39 @@ li:hover {
   }
 
   .smallLogo {
+    width: 160px;
+    margin-top: 0.7rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  #page-intro {
+    grid-template-rows: 1fr 1fr 12fr;
+  }
+  
+  #nav li {
+    font-size: smaller 
+  }
+
+  .smallLogo {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+
+  #page-intro {
+    grid-template-rows: 1fr 2fr 7fr;
+  }
+
+  img {
+    width: 180px;
+    margin-top: 1rem;
+  }
+
+  .smallLogo {
+    display: flex;
     width: 160px;
     margin-top: 0.7rem;
   }
