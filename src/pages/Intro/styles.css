@@ -1,6 +1,5 @@
 #page-intro {
   height: 100vh;
-  background: url("../../assets/Home-bolinhas.png") no-repeat bottom;
   transition: all 0.8s ease;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -8,6 +7,10 @@
   grid-template-areas:
     ". nav"
     "logo form";
+}
+
+.desktopBg {
+  background: url("../../assets/Home-bolinhas.png") no-repeat bottom;
 }
 
 .intro-logo-container img {
@@ -26,7 +29,7 @@
 
 a:hover,
 li:hover {
-  color: var(--primary-color);
+  color: var(--card-span-color);
   transition: 0.3s ease;
 }
 
@@ -82,7 +85,6 @@ li:hover {
 
 @media (max-width: 900px) {
   #page-intro {
-    background: url("../../assets/Plano-bolinhas-cadastro.png") no-repeat bottom;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 7fr;
@@ -90,6 +92,10 @@ li:hover {
       "nav"
       "logo"
       "form";
+  }
+
+  .mobileBg {
+    background: url("../../assets/Plano-bolinhas-cadastro.png") no-repeat bottom;
   }
 
   #nav {
@@ -149,7 +155,7 @@ li:hover {
 	}
 	50% {
 		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
-		transform: translatey(-20px);
+		transform: translatey(-10px);
 	}
 	100% {
 		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
