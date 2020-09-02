@@ -1,4 +1,4 @@
-import { Request, Response, response } from 'express';
+import { Request, Response } from 'express';
 import knex from '../database/connection';
 
 class SorteiosController {
@@ -39,6 +39,11 @@ class SorteiosController {
     response.json(serializedSorteiosFechados);
   }
 
+  async showAll (request: Request, response: Response) {
+    const allSorteios = await knex('sorteios').select('*');
+    response.json(allSorteios);
+  }
+
   async show (request:Request, response:Response ) {
     const id = Number(request.params.id_user);
     
@@ -64,7 +69,7 @@ class SorteiosController {
     
     const sorteiosPremiados = await knex('sorteios')
     .join('apostas', {'sorteios.id' : 'apostas.id_sorteio'})
-    .where('premiado', 1,)
+    .where('premiado', 1)
     .join('fichas', {'apostas.id_ficha' : 'fichas.id'})
     .where('id_user', id).select('*');
     

@@ -1,4 +1,4 @@
-import { Request, Response, response } from 'express';
+import { Request, Response } from 'express';
 import knex from '../database/connection';
 
 class UsersController {
@@ -25,12 +25,15 @@ class UsersController {
 
     const user = await knex('users').where('id', id).first().select('name','lastname','email');
     const userFichas = await knex('fichas').where('id_user', '=', id).select('*');
+    const fichasQtd = userFichas.length
     
     if( !user ) {
       return response.status(400).json({ message: 'User not found on DataBase.'});
     }
 
-    response.json({user, userFichas});
+    user.fichasQtd = fichasQtd;
+
+    response.json({user, fichasQtd});
   }
 
   async show (request:Request, response: Response) {

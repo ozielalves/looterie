@@ -18,6 +18,8 @@ routes.get('/sorteiosfechados', sorteiosController.showClosed);
 
 routes.get('/sorteios/:id_user', sorteiosController.show);
 
+routes.get('/sorteios', sorteiosController.showAll);
+// REMAKE
 routes.get('/sorteiospremiados/:id_user', sorteiosController.showAwarded);
 
 routes.get('/sorteioapostadores/:id_sorteio', sorteiosController.showBettors);
@@ -32,7 +34,7 @@ routes.post('/fichas', fichasController.create);
 
 routes.get('/users/:id', userController.showUser);
 
-routes.get('/users/', userController.show);
+routes.get('/users', userController.show);
 
 routes.post('/users', userController.create);
 
