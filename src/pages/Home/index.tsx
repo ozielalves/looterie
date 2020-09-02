@@ -6,10 +6,21 @@ import littleLogo from '../../assets/littleLogo.png';
 import UserNav from '../components/User-Navigation';
 import Sorteios from '../components/Sorteios';
 
+import './styles.css';
+
 const Home = () => {
   return(
-    <div id="page-sorteios">
+    <div id="home">
       <UserNav />
+        <div className="home-header">
+          <Link to="sorteiosabertos"><img src={littleLogo} alt="logo"/></Link>
+          <h2 className="welcome"> Bem vindo(a), <strong>OZIEL</strong></h2>
+          <div className="burguer">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+        </div>
         <div id="nav">
           <ul className="user-navbar">
             <div className="menu">
@@ -23,7 +34,7 @@ const Home = () => {
           </ul>
         </div>
         
-        <div className="mySidebar">
+        {/* <div className="mySidebar">
           <div className="avatar"></div>
           <div className="menu-list">
             <Link to="login">PESQUISAR</Link>
@@ -32,16 +43,7 @@ const Home = () => {
             <Link to="cadastro">COMPRAR FICHAS</Link>
             <Link to="cadastro">ADQUIRIR FICHAS</Link>
           </div>
-          <div className="little-logo">
-            <Link to="sorteiosabertos"><img src={littleLogo} alt="logo"/></Link>
-          </div>
-        </div>
-
-        <div className="hidden">
-            <Link to="sorteiosabertos"><img src={littleLogo} alt="logo"/></Link>
-            <h2 className="welcome"> Bem vindo(a), <strong>OZIEL</strong></h2>
-            <BsList/>
-        </div>
+        </div> */}
         <main>
           <div className="sorteios">
             <Sorteios />
