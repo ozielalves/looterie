@@ -72,7 +72,7 @@ class SorteiosController {
     .join('apostas', {'sorteios.id' : 'apostas.id_sorteio'})
     .where('premiado', 1)
     .join('fichas', {'apostas.id_ficha' : 'fichas.id'})
-    .where('id_user', id).select('*');
+    .where('fichas.id_user', id).select('*');
     
     const serializedSorteiosPremiados = sorteiosPremiados.map(sorteio => {
       return {

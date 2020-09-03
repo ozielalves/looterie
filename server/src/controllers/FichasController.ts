@@ -19,12 +19,36 @@ class FichasController {
 
   async update (req: Request, res: Response) {
     const trx = await knex.transaction();
-    
-    const fichas = trx('fichas').select('id');
-    (await fichas).map( async ficha => {
-      const sorteio = trx('apostas').where('id_ficha', ficha.id).select('id_sorteio')
-      trx('fichas').where('id', ficha.id).update({id_sorteio: sorteio})
+    /* const fichas = await trx('fichas').select('id'); */
+    /* const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha'); */
+    /* fichas.map( async ficha => {
+      const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha').first();
+      if (apostas){
+        apostas.map( async aposta => {
+          await trx('fichas').where('id', ficha.id).update({id_sorteio: aposta.id_sorteio});
+        });  
+      } */
+      /* apostas.map( async aposta => {
+        if (aposta.id_ficha === ficha.id){
+          await trx('fichas').where('id', ficha.id).update({id_sorteio: aposta.id_sorteio});
+        }
+      }); 
+      const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha').first();
+    });*/
+
+    let apostasFichas : Number[] = [];
+    let apostasFichasSorteios : Number[] = [];
+    const apostas = await trx('apostas').select('id_sorteio','id_ficha');
+    apostas.map( async aposta => {
+      apostasFichas.push(Number(aposta.id_ficha))
+      apostasFichasSorteios.push(Number(aposta.id_sorteio))
     });
+
+    apostasFichas.map( async ficha => {
+      apostasFichasSorteios.map( async sorteio => {
+        await trx('fichas').where('id', ficha).update({id_sorteio: sorteio});
+      })
+    })
 
     await trx.commit();
   }
