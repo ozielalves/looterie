@@ -33,7 +33,7 @@ class UsersController {
 
     user.fichasQtd = fichasQtd;
 
-    response.json({user, fichasQtd});
+    response.json(user);
   }
 
   async show (request:Request, response: Response) {

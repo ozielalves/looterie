@@ -10,11 +10,23 @@ class FichasController {
   };
 
   async create (request: Request, response: Response) {
-      const id_user = request.body;
+    const id_user = request.body;
+  
+    await knex('fichas').insert({ id_user });
     
-      await knex('fichas').insert({ id_user });
-      
-      return response.json({ success: true })
+    return response.json({ success: true })
+  }
+
+  async update (req: Request, res: Response) {
+    const trx = await knex.transaction();
+    
+    const fichas = trx('fichas').select('id');
+    (await fichas).map( async ficha => {
+      const sorteio = trx('apostas').where('id_ficha', ficha.id).select('id_sorteio')
+      trx('fichas').where('id', ficha.id).update({id_sorteio: sorteio})
+    });
+
+    await trx.commit();
   }
 };
 

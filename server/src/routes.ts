@@ -28,7 +28,11 @@ routes.post('/sorteios', sorteiosController.create);
 
 routes.put('/sorteios/:id', sorteiosController.update);
 
+routes.put('/looterie/:id_sorteio', sorteiosController.sorteia);
+
 routes.get('/fichas/:id_user', fichasController.show);
+
+routes.put('/fichas', fichasController.update);
 
 routes.post('/fichas', fichasController.create);
 
@@ -40,6 +44,6 @@ routes.post('/users', userController.create);
 
 routes.put('/users/:id', userController.update);
 
-routes.post('/apostas/:id_user/:id_sorteio/:n_fichas', apostasController.create);
+routes.post('/apostas', apostasController.create);
 
 export default routes;

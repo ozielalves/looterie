@@ -22,8 +22,8 @@ class SorteiosController {
   }
 
   async showClosed (request:Request, response:Response){
-    const sorteiosFechados = await knex('sorteios').where('aberto', '=', 0).select('*');
-  
+    const sorteiosFechados = await knex('sorteios').where('aberto', 0).select('*');
+    
     const serializedSorteiosFechados = sorteiosFechados.map(sorteio => {
       return {
         title: sorteio.title,
@@ -58,7 +58,8 @@ class SorteiosController {
         data_sorteio: sorteio.data_sorteio,
         limite_ficha: sorteio.limite_ficha,
         id_user: sorteio.id_user,
-        id: sorteio.id
+        id: sorteio.id,
+        aberto: sorteio.aberto
       }
     })
     response.json(serializedSorteios);
@@ -90,7 +91,6 @@ class SorteiosController {
 
   async showBettors (request:Request, response:Response ) {
     const id = Number(request.params.id_sorteio);
-    
     const apostadores = await knex('apostas')
     .join('fichas', {'apostas.id_ficha': 'fichas.id'})
     .join('users', {'fichas.id_user' : 'users.id'})
@@ -112,7 +112,7 @@ class SorteiosController {
       image
     } = request.body;
   
-    await knex('sorteios').insert({
+    const newSorteio = await knex('sorteios').insert({
       id_user,
       title,
       description,
@@ -122,17 +122,44 @@ class SorteiosController {
       image
     });
     
-    return response.json({ success: true })
+    response.json(newSorteio);
   }
 
   async update (request: Request, response: Response) {
     const id = request.params.id;
     const { title, description, image, data_sorteio } = request.body;
     
-    await knex('sorteios').where({ 'id' : id }).update({ title, description, image, data_sorteio });
+    const updatedSorteio = await knex('sorteios').where({ 'id' : id }).update({ title, description, image, data_sorteio });
 
-    response.json({ success:true });
+    response.json(updatedSorteio);
   }
+
+  async sorteia (request: Request, response: Response) {
+    const id_sorteio = Number(request.params.id_sorteio);
+    const trx = await knex.transaction();
+    // Get Apostadores do sorteio
+    const apostadores = await trx('apostas')
+    .join('fichas', {'apostas.id_ficha': 'fichas.id'})
+    .join('users', {'fichas.id_user' : 'users.id'})
+    .where('apostas.id_sorteio', id_sorteio)
+    .distinct()
+    .select('id_ficha','id_user', 'name', 'lastname');
+    // Randon ganhador
+    const winner = apostadores[Math.floor(Math.random() * apostadores.length)];
+    const winnerName = winner.name + ' ' + winner.lastname;
+
+    // Set Ganhador do Sorteio
+    await trx('apostas').where('id_ficha', Number(winner.id_ficha)).update({premiado: 1});
+    
+    // Fechar Sorteio
+    await trx('sorteios').where('id', id_sorteio).update({aberto: 0})
+
+    // Fechando Transação
+    await trx.commit();
+    
+    response.json(winnerName);
+  }
+
 }
 
 

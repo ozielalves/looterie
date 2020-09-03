@@ -3,34 +3,25 @@ import knex from '../database/connection';
 
 class ApostasController {
   async create (request: Request, response: Response) {
-      const { id_sorteio, id_user, n_fichas } = request.params;
+    const { id_user, id_sorteio, n_fichas } = request.body;
 
-      var userFichasVector : Number[] = [];
-
-      const trx = await knex.transaction();
-      
-      const userFichas = (await trx('fichas')
-                        .where('id_user', id_user)
-                        .select('fichas.id'))
-                        .map(ficha => (userFichasVector.push(ficha)));
+    const trx = await knex.transaction();
     
-      //const userFichasSerialized = userFichas.map(ficha => (userFichasVector.push(ficha)));
+    const userFichas = await trx('fichas').where('id_user', id_user).select('id');
 
-      if( !userFichas ) {
-        return response.status(400).json({ message: 'The user do not have enought token.'});
-      }
+    if (n_fichas > userFichas.length || !userFichas) {
+      return response.status(400).json({ message: 'Not enought tickets for this user.'});
+    }
 
-      for (var i = 0; i == ((n_fichas as any)-1); i++) {
+    userFichas.map( async fichaID => {
+      await trx('apostas').insert({ id_ficha: fichaID, id_sorteio });
 
-        const id_ficha = userFichasVector[i];
-        
-        await trx('apostas').insert({ id_ficha, id_sorteio });
+      await trx('ficha').where({ id: fichaID }).update({ id_sorteio });
+    })
+    
+    await trx.commit();
 
-        await trx('ficha').where({ id: id_ficha }).update({ id_sorteio });
-      
-      }
-
-      return response.json({ success: true });
+    response.json(userFichas);
   }
 };
 
