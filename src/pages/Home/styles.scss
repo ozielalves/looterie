@@ -1,19 +1,46 @@
-#home {
-  height: 92vh;
+$primary-color: #CB9B77;
 
+#home {
+  height: 100vh;
   background: url('../../assets/UserNav-bolinhas.png') no-repeat bottom;
+  display: flex;
+  flex-direction: column;
+  
+  #sidebar {
+    grid-area: sidebar;
+  }
+  
+  .nav-active {
+    transform: translate(0%);
+  }
+
+  main {
+    grid-area: main;
+  }
 
   .home-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    img {
+      width: 90px;
+    }
+
+    p, strong {
+      color: $primary-color;
+      font-size: larger;
+    }
+
     .burguer {
-      display: none;
+      display: block;
       cursor: pointer;
     }
     
     .burguer div {
       width: 25px;
       height: 3px;
-      background-color: white;
+      background-color: $primary-color;
       margin: 5px;
       transition: all 0.3s ease;
     }

@@ -32,7 +32,7 @@ routes.put('/looterie/:id_sorteio', sorteiosController.sorteia);
 
 routes.get('/fichas/:id_user', fichasController.show);
 
-routes.put('/fichas', fichasController.update);
+/* routes.put('/fichas', fichasController.update); */
 
 routes.post('/fichas', fichasController.create);
 

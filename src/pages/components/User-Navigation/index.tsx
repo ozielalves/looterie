@@ -1,45 +1,59 @@
 import React from "react";
-import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-import './styles.css';
-//import Logo from '../../assets/littleLogo.png';
-import Avatar from '../../../assets/Avatar.png';
+import "./styles.css";
+import littleLogo from "../../../assets/littleLogo.png";
+import Avatar from "../../../assets/Avatar.png";
 
-/*
-function toggle () {
-    var element = document.getElementById('sidebar');
-    element.classList.toggle("mySidebar");
-    var a = document.getElementsByTagName('hideThis');
-    a.classList.toggle("hidden");
-  }
-*/
-
-const UserNav = () =>{
-  return(
-    <Nav id="sidebar">
-        <div className="sidebar-header">
-          <img src={Avatar} alt="Avatar"/>
-        </div>
-
-        <ul className="list-unstyled components">
-            <h3>Oziel Alves</h3>
-            <li className="active">
-                <ul className="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <Link to="#">127 Fichas</Link>
-                    </li>
-                    <li>
-                        <Link to="#">Editar Perfil</Link>
-                    </li>
-                    <li>
-                        <Link to="/">Sair</Link>
-                    </li>
-                </ul>
+const UserNav = () => {
+  return (
+    <Nav id="sidebar">     
+        <div className="active">
+          <ul className="collapse list-unstyled" id="homeSubmenu">
+            <li className="sidebar-header">
+              <div className="user-profile">
+                <img src={Avatar} alt="Avatar" />
+                <h3>OZIEL</h3>
+              </div>
+              <ul>
+                <li>
+                  <Link to="#">127 Fichas</Link>
+                </li>
+                <li>
+                  <Link to="#">Editar Perfil</Link>
+                </li>
+                <li>
+                  <Link to="/">Sair</Link>
+                </li>
+              </ul>
             </li>
-        </ul>
-      </Nav>
+            <div className="menu">
+              <li>
+                <Link to="login">PESQUISAR</Link>
+              </li>
+              <li>
+                <Link to="cadastro">CRIAR SORTEIO</Link>
+              </li>
+              <li>
+                <Link to="cadastro">RELATÓRIO</Link>
+              </li>
+              <li>
+                <Link to="cadastro">COMPRAR FICHAS</Link>
+              </li>
+              <li>
+                <Link to="cadastro">ADQUIRIR FICHAS</Link>
+              </li>
+            </div>
+            <li>
+              <Link to="/home">
+                <img src={littleLogo} alt="logo" />
+              </Link>
+            </li>
+          </ul>
+        </div>
+    </Nav>
   );
-}
+};
 
 export default UserNav;

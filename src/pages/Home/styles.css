@@ -1,23 +1,58 @@
 #home {
-  height: 92vh;
+  height: 100vh;
   background: url("../../assets/UserNav-bolinhas.png") no-repeat bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#home #sidebar {
+  grid-area: sidebar;
+}
+
+#home .nav-active {
+  -webkit-transform: translate(0%);
+          transform: translate(0%);
+}
+
+#home main {
+  grid-area: main;
 }
 
 #home .home-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home .home-header img {
+  width: 90px;
+}
+
+#home .home-header p, #home .home-header strong {
+  color: #CB9B77;
+  font-size: larger;
 }
 
 #home .home-header .burguer {
-  display: none;
+  display: block;
   cursor: pointer;
 }
 
 #home .home-header .burguer div {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #CB9B77;
   margin: 5px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;

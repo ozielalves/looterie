@@ -17,24 +17,24 @@ class FichasController {
     return response.json({ success: true })
   }
 
-  async update (req: Request, res: Response) {
+/*   async update (req: Request, res: Response) {
     const trx = await knex.transaction();
-    /* const fichas = await trx('fichas').select('id'); */
-    /* const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha'); */
-    /* fichas.map( async ficha => {
+    const fichas = await trx('fichas').select('id');
+    const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha');
+    fichas.map( async ficha => {
       const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha').first();
       if (apostas){
         apostas.map( async aposta => {
           await trx('fichas').where('id', ficha.id).update({id_sorteio: aposta.id_sorteio});
         });  
-      } */
-      /* apostas.map( async aposta => {
+      }
+      apostas.map( async aposta => {
         if (aposta.id_ficha === ficha.id){
           await trx('fichas').where('id', ficha.id).update({id_sorteio: aposta.id_sorteio});
         }
       }); 
       const apostas = await trx('apostas').where('id_ficha', ficha.id).select('id_sorteio','id_ficha').first();
-    });*/
+    });
 
     let apostasFichas : Number[] = [];
     let apostasFichasSorteios : Number[] = [];
@@ -51,7 +51,7 @@ class FichasController {
     })
 
     await trx.commit();
-  }
-};
+  }*/
+}; 
 
 export default FichasController;
