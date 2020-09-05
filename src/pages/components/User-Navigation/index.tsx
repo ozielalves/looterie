@@ -3,8 +3,8 @@ import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./styles.css";
-import littleLogo from "../../../assets/littleLogo.png";
-import Avatar from "../../../assets/Avatar.png";
+import littleLogo from "../../../assets/Mini-Logo.svg";
+import Avatar from "../../../assets/user-avatar.svg";
 
 const UserNav = () => {
   return (
@@ -14,17 +14,17 @@ const UserNav = () => {
             <li className="sidebar-header">
               <div className="user-profile">
                 <img src={Avatar} alt="Avatar" />
-                <h3>OZIEL</h3>
+                <p>Editar Perfil</p>
               </div>
               <ul>
+                <li>
+                  <Link to="#"><strong>OZIEL</strong></Link>
+                </li>
                 <li>
                   <Link to="#">127 Fichas</Link>
                 </li>
                 <li>
-                  <Link to="#">Editar Perfil</Link>
-                </li>
-                <li>
-                  <Link to="/">Sair</Link>
+                  <Link to="/">3 Sorteios</Link>
                 </li>
               </ul>
             </li>
@@ -44,13 +44,16 @@ const UserNav = () => {
               <li>
                 <Link to="cadastro">ADQUIRIR FICHAS</Link>
               </li>
+              <li>
+                <Link to="cadastro">Sair</Link>
+              </li>
             </div>
-            <li>
-              <Link to="/home">
-                <img src={littleLogo} alt="logo" />
-              </Link>
-            </li>
           </ul>
+          <div className="nav-mini-logo">
+            <Link to="/home">
+              <img src={littleLogo} alt="logo" />
+            </Link>
+          </div>
         </div>
     </Nav>
   );

@@ -44,8 +44,8 @@ const Intro = () => {
 
   return(
     <div id="page-intro" className={loginDisplay || registerDisplay ? "mobileBg" : "desktopBg"}>
-      <div id="nav">
-        <ul className="navbar">
+      <div id="intro-nav">
+        <ul className="intro-navbar">
           <li onClick={toggleLoginFormDisplay}>ENTRAR</li>
           <li onClick={toggleRegisterFormDisplay}>CADASTRE-SE</li>
         </ul>

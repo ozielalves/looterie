@@ -7,20 +7,21 @@ $primary-color: #CB9B77;
   background-color: #452642;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 50%;
-  transform: translate(0%);
+  
   transition: transform 0.5s ease-in;
+  padding: 0 1rem 0 2rem;
+  box-shadow: -4px 0 10px  rgba(0, 0, 0, 0.5);
 
   img {
-      width: 120px;
+      width: 87px;
     }
 
   .sidebar-header {
     display: flex;
     align-items: center;
     
-    a {
+    a,p {
       font-size: smaller;
     }
 
@@ -32,6 +33,11 @@ $primary-color: #CB9B77;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      img {
+        padding-right: 5px;
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -40,11 +46,33 @@ $primary-color: #CB9B77;
 
     li {
       text-decoration: none;
+      padding: 0.6rem 0;
     }
 
-    h3, a{
+    h3, a, p{
       color: $primary-color;
       text-decoration: none;
     }
+
   }
+
+  .active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100vh;
+    .nav-mini-logo {
+      align-self: center;
+      margin: 3rem 0;
+    }
+  } 
+}
+
+.not-visible {
+  transform: translate(110%);
+}
+
+.visible {
+  transform: translate(0%);
 }

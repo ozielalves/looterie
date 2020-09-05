@@ -2,6 +2,8 @@ import React from 'react';
 
 import Sorteio from '../Sorteio';
 
+import './styles.css';
+
 const data = [
   {status:1, title:'iPhone 11', description:'Marque 3 amigos na foto oficial do sorteio e confirme a participação.', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQoED92Dh5P1FLS-Q0j0_gqDcEDY089M3HXRY8LO_-MEohb7S-M09RAXnWgROFvrJNGvzsV57jz&usqp=CAc', socialMedia:'@jrsmartspanhones'},
   {status:1, title:'Um dia de Beleza', description:'Assista o vídeo da última resenha sobre os novos produtos da vult.', img:'https://http2.mlstatic.com/kit-maquiagem-pincel-completo-bella-femme-23-itens-promoco-D_NQ_NP_772442-MLB42635308566_072020-F.jpg', socialMedia:'Blog da Bianca'},
@@ -45,9 +47,9 @@ const Sorteios = () => {
         </div>
       </div>
       <div className="sorteios">
-        {/* {dataSorteios.map( sorteio => {
+        {dataSorteios.map( sorteio => {
           <Sorteio title={sorteio.title} description={sorteio.description} img={sorteio.img} socialMedia={sorteio.socialMedia}/>
-        })} */}
+        })}
       </div>
     </div>
   );

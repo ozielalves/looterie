@@ -33,11 +33,11 @@ li:hover {
   transition: 0.3s ease;
 }
 
-#nav {
+#intro-nav {
   grid-area: nav;
 }
 
-.navbar {
+.intro-navbar {
   margin: 3rem 0 0 0;
   padding: 0;
   list-style: none;
@@ -47,7 +47,7 @@ li:hover {
   text-align: center;
 }
 
-#nav li {
+#intro-nav li {
   padding: 0.2rem 2rem;
   text-decoration: none;
   font-size: larger;
@@ -98,7 +98,7 @@ li:hover {
     background: url("../../assets/Plano-bolinhas-cadastro.png") no-repeat bottom;
   }
 
-  #nav {
+  #intro-nav {
     margin: 0;
     width: 100%;
   }
@@ -124,14 +124,14 @@ li:hover {
     align-items: center;
   }
 
-  .navbar {
+  .intro-navbar {
     display: flex;
     text-align: center;
     justify-content: center;
   }
 }
 @media (max-width: 400px) {
-  #nav li {
+  #intro-nav li {
     font-size: smaller 
   }
 
@@ -152,7 +152,7 @@ li:hover {
     grid-template-rows: 1fr 1fr 12fr;
   }
   
-  #nav li {
+  #intro-nav li {
     font-size: smaller 
   }
 
