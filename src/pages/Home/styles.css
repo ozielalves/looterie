@@ -10,20 +10,7 @@
           flex-direction: column;
 }
 
-#home #sidebar {
-  grid-area: sidebar;
-}
-
-#home .nav-active {
-  -webkit-transform: translate(0%);
-          transform: translate(0%);
-}
-
-#home main {
-  grid-area: main;
-}
-
-#home .home-header {
+#home main .home-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,21 +23,21 @@
   margin: 2rem 1rem 0 0.5rem;
 }
 
-#home .home-header img {
+#home main .home-header img {
   width: 90px;
 }
 
-#home .home-header p, #home .home-header strong {
+#home main .home-header p, #home main .home-header strong {
   color: #CB9B77;
   font-size: larger;
 }
 
-#home .home-header .burguer {
+#home main .home-header .burguer {
   display: block;
   cursor: pointer;
 }
 
-#home .home-header .burguer div {
+#home main .home-header .burguer div {
   width: 25px;
   height: 3px;
   background-color: #CB9B77;
