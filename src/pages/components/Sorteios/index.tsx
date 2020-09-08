@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Sorteio from '../Sorteio';
 
@@ -16,81 +16,68 @@ const Sorteios = () => {
 
   const [selected, setSelected] = useState('b3');
 
-
-  /* useEffect(() => {
-    document.addEventListener("mousedown", handleFilter);
-
-    return () => {
-      document.removeEventListener("mousedown", handleFilter);
-    };
-  }, [navDisplay]); */
-
   const handleFilter = e => {
-    console.log(e.target.id)
     e.preventDefault();
-
-    if (e.target.id == "sorteiosabertos") {
+    if (e.target.id === "sorteiosabertos") {
       setSelected('b1');
+      e.target.style.zIndex = 4;
+      e.target.nextElementSibling.style.zIndex = 3;
+      e.target.nextElementSibling.nextElementSibling.style.zIndex = 2;
+      e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.zIndex = 1;
     }
-    if (e.target.id == "sorteiosfechados") {
+    if (e.target.id === "sorteiosfechados") {
       setSelected('b2');
+      e.target.style.zIndex = 4;
+      e.target.previousElementSibling.style.zIndex = 3;
+      e.target.nextElementSibling.style.zIndex = 2;
+      e.target.nextElementSibling.nextElementSibling.style.zIndex = 1;
     }
-    if (e.target.id == "meussorteios") {
+    if (e.target.id === "meussorteios") {
       setSelected('b3');
+      e.target.style.zIndex = 4;
+      e.target.previousElementSibling.style.zIndex = 3;
+      e.target.previousElementSibling.previousElementSibling.style.zIndex = 2;
+      e.target.nextElementSibling.style.zIndex = 1;
     }
-    if (e.target.id == "sorteiospremiados") {
+    if (e.target.id === "sorteiospremiados") {
       setSelected('b4');
+      e.target.style.zIndex = 4;
+      e.target.previousElementSibling.style.zIndex = 3;
+      e.target.previousElementSibling.previousElementSibling.style.zIndex = 2;
+      e.target.previousElementSibling.previousElementSibling.previousElementSibling.style.zIndex = 1;
     }
-/*     switch (e) {
-      case e.target.id == "sorteiosabertos":
-        setSelected('b1');
-        console.log(selected)
-        break;
-      case e.target.id == "sorteiosfechados":
-        setSelected('b2');
-        console.log(selected)
-        break;
-      case e.target.id == "meussorteios":
-        setSelected('b3');
-        console.log(selected)
-        break;
-      case e.target.id == "sorteiospremiados":
-        setSelected('b4');
-        console.log(selected)
-        break;
-    } */
   }
 
   return(
     <div className="folder-sorteios">
       <div className="buttons">
         <div id="sorteiosabertos" 
-             className={ selected == 'b1' ? "b1 button buttonSelected" : "b1 button" }
+             className={ selected === 'b1' ? "b1 button buttonSelected" : "b1 button" }
              onClick={handleFilter}
         >
-          <a>Sorteios Abertos</a>
+          <p>ABERTOS</p>
         </div> 
         <div id="sorteiosfechados" 
-             className={ selected == 'b2' ? "b2 button buttonSelected" : "b2 button" } 
+             className={ selected === 'b2' ? "b2 button buttonSelected" : "b2 button" } 
              onClick={handleFilter}
         >
-          <a>Sorteios Fechados</a>
+          <p>FECHADOS</p>
         </div>
         <div id="meussorteios" 
-             className={ selected == 'b3' ? "b3 button buttonSelected" : "b3 button" } 
+             className={ selected === 'b3' ? "b3 button buttonSelected" : "b3 button" } 
              onClick={handleFilter}
         >
-          <a>Meus Sorteios</a>
+          <p>MEUS SORTEIOS</p>
         </div>
         
         <div id="sorteiospremiados" 
-             className={ selected == 'b4' ? "b4 button buttonSelected" : "b4 button" } 
+             className={ selected === 'b4' ? "b4 button buttonSelected" : "b4 button" } 
              onClick={handleFilter}
         >
-          <a id="premio" >Sorteios Premiados</a>
+          <p id="premio">GANHEI</p>
         </div>
       </div>
-      <div className={ selected == "b4" ? "sorteiosPremiado" : "sorteios" }>
+      <div className={ selected === "b4" ? "sorteiosPremiado" : "sorteios" }>
         { dataSorteios ? dataSorteios.map( sorteio => {
           return (
           <Sorteio 

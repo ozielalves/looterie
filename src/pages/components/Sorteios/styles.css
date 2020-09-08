@@ -8,49 +8,59 @@
 }
 
 .buttons .button {
-  width: 188px;
+  min-width: 135.359px;
   height: 51.6px;
   position: absolute;
   padding: 1rem;
   background: rgba(174, 168, 173, 0.58);
   border-radius: 5px 5px 0px 0;
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
+  -webkit-transition: background 0.7s ease, bottom 0.3s ease;
+  transition: background 0.7s ease, bottom 0.3s ease;
 }
 
-.buttons .button a {
+.buttons .button p {
   display: none;
 }
 
 .buttons .buttonSelected {
   background: #AEA8AD;
-  z-index: 4;
+  z-index: 5 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   height: 52.6px !important;
+  bottom: 78%;
+  pointer-events: none;
 }
 
-.buttons .buttonSelected a {
+.buttons .buttonSelected p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: white;
 }
 
 .buttons .b1 {
-  left: 10%;
-}
-
-.buttons .b2 {
+  z-index: 4;
   left: 25%;
 }
 
+.buttons .b2 {
+  z-index: 3;
+  left: 35%;
+}
+
 .buttons .b3 {
-  left: 40%;
+  z-index: 2;
+  left: 45%;
 }
 
 .buttons .b4 {
-  left: 55%;
+  z-index: 1;
+  left: 67%;
   background: #003F6C;
 }
 /*# sourceMappingURL=styles.css.map */
