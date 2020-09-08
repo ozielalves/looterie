@@ -28,8 +28,20 @@ const Sorteios = () => {
   const handleFilter = e => {
     console.log(e.target.id)
     e.preventDefault();
-    
-    switch (e) {
+
+    if (e.target.id == "sorteiosabertos") {
+      setSelected('b1');
+    }
+    if (e.target.id == "sorteiosfechados") {
+      setSelected('b2');
+    }
+    if (e.target.id == "meussorteios") {
+      setSelected('b3');
+    }
+    if (e.target.id == "sorteiospremiados") {
+      setSelected('b4');
+    }
+/*     switch (e) {
       case e.target.id == "sorteiosabertos":
         setSelected('b1');
         console.log(selected)
@@ -46,7 +58,7 @@ const Sorteios = () => {
         setSelected('b4');
         console.log(selected)
         break;
-    }
+    } */
   }
 
   return(
@@ -78,7 +90,7 @@ const Sorteios = () => {
           <a id="premio" >Sorteios Premiados</a>
         </div>
       </div>
-      <div className="sorteios">
+      <div className={ selected == "b4" ? "sorteiosPremiado" : "sorteios" }>
         { dataSorteios ? dataSorteios.map( sorteio => {
           return (
           <Sorteio 
