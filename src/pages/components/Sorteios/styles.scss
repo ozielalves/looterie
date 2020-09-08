@@ -1,4 +1,50 @@
-.sorteios {
-  height: 80vh;
-  background: url("../../assets/Retangulo-Bolinhas.svg") no-repeat bottom;
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+
+  .button {
+    width: 188px;
+    height: 51.2px;
+    position: absolute;
+    padding: 1rem;
+    background: rgba(174, 168, 173, 0.58);
+    border-radius: 5px 5px 0px 0;
+    
+    a {
+      display: none;
+    }
+  }
+
+  .buttonSelected {
+    background: #AEA8AD;
+    z-index: 4;
+    justify-content: center;
+
+    a {
+      display: flex;
+    }
+  }
+
+  .b1 {
+    
+    left: 10%;
+  }
+
+  .b2 {
+    
+    left: 25%;
+  }
+
+  .b3 {
+    
+    left: 40%;
+  }
+
+  .b4 {
+    
+    left: 55%;
+    background: #003F6C;
+  }
+
+
 }

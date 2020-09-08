@@ -8,31 +8,38 @@ import UserNav from '../components/User-Navigation';
 import Sorteios from '../components/Sorteios';
 
 import './styles.css';
+import { CSSTransition } from 'react-transition-group';
 
 const Home = () => {
 
   const [navDisplay, setNavDisplay] = useState(false);
 
+  const mainComponent = useRef<HTMLDivElement>(null);
   const navComponent = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // add when mounted
-    document.addEventListener("mousedown", handleClick);
+    if (navDisplay) {
+      document.addEventListener("mousedown", handleClick);
+    } else {
+      document.removeEventListener("mousedown", handleClick);
+    }
     // return function to be called when unmounted
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
+  }, [navDisplay]);
 
   const handleClick = e => {
-    if (navComponent != null) {
-      if (navComponent.current.contains(e.target)) {
-        // inside click
-        return;
-      }
-      // outside click
-      setNavDisplay(!navDisplay)
-    } 
+    const mainCurrentComponent = mainComponent.current;
+    if (mainCurrentComponent) {
+      if (mainCurrentComponent.contains(e.target)) {
+        // outside click
+        setNavDisplay(false)
+      }  
+    }
+      // inside click
+      return;
   };
 
   const navDisplayHandler = () => {
@@ -40,11 +47,14 @@ const Home = () => {
   }
 
   return(
-    <div id="home">
-        <div ref={navComponent} id="nav" className={ navDisplay ? 'visible' : 'not-visible'}>
-          <UserNav />
-        </div>
-        <main className={navDisplay ? 'darken' : ''}>
+    <>
+    <CSSTransition in={navDisplay} timeout={300} classNames="nav">
+      <div ref={navComponent} id="nav" className={ navDisplay ? 'visible' : 'not-visible'}>
+        <UserNav />
+      </div>
+    </CSSTransition>
+      <main ref={mainComponent} className={navDisplay ? 'blured' : ''}>
+        <div id="home">
           <div className="home-header">
             <Link to="/home"><img src={Logo} alt="logo"/></Link>
             <p className="welcome"> Bem vindo(a), <strong>OZIEL</strong></p>
@@ -54,11 +64,10 @@ const Home = () => {
               <div className="line3"></div>
             </div>
           </div>
-          <div className="sorteios">
-            {/* <Sorteios /> */}
-          </div>
-        </main>
-    </div>
+          <Sorteios />
+        </div>
+      </main>
+    </>
   );
 }
 

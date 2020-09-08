@@ -12,16 +12,15 @@
 
 .sorteios {
   background: rgb(205,205,205, 0.40);
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 36.8rem;
   overflow-y: auto;
-  max-height: 75vh;
-  min-height: 75vh;
-  box-shadow: 5px 5px 7px rgba(50, 50, 50, 0.77);
-  display: inline-block
+  margin: 3.2rem 0 0 0;
 }
 
 .sorteios .card-sorteio , .sorteiosPremiado .card-sorteio {
-  width: 460px;
+  width: 375px;
   height: 162px;
   background: #ffdcdc;
   margin: 20px;
@@ -34,6 +33,11 @@
   padding: 10px 10px 20px 20px;
 }
 
+.sorteios .card-sorteio img {
+  width: 160px;
+  height: 162px;
+}
+
 .sorteios .card-sorteio .card-content h3, .sorteiosPremiado .card-sorteio .card-content h3 {
   color: #000
 }
@@ -42,8 +46,8 @@
   margin-top: 8px;
 }
 
-.sorteios .card-sorteio .card-content .sorteio-diretriz, .sorteiosPremiado .card-sorteio .card-content .sorteio-diretriz, .sorteio-title {
-  max-width: 240px;
+.sorteios .card-sorteio .card-content , .sorteiosPremiado .card-sorteio .card-content {
+  width: 215px;
 }
 
 .sorteios .card-sorteio .card-content .sorteio-link, .sorteiosPremiado .card-sorteio .card-content .sorteio-link {
@@ -52,6 +56,6 @@
 }
 
 
-.sorteios, .sorteiosPremiado .card-sorteio ul {
+.sorteios ul, .sorteiosPremiado ul {
   list-style-type: none;
 }

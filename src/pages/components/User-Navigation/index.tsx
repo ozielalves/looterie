@@ -30,22 +30,22 @@ const UserNav = () => {
             </li>
             <div className="menu">
               <li>
-                <Link to="login">PESQUISAR</Link>
+                <Link to="home">PESQUISAR</Link>
               </li>
               <li>
-                <Link to="cadastro">CRIAR SORTEIO</Link>
+                <Link to="home">CRIAR SORTEIO</Link>
               </li>
               <li>
-                <Link to="cadastro">RELATÓRIO</Link>
+                <Link to="home">RELATÓRIO</Link>
               </li>
               <li>
-                <Link to="cadastro">COMPRAR FICHAS</Link>
+                <Link to="home">COMPRAR FICHAS</Link>
               </li>
               <li>
-                <Link to="cadastro">ADQUIRIR FICHAS</Link>
+                <Link to="home">ADQUIRIR FICHAS</Link>
               </li>
               <li>
-                <Link to="cadastro">Sair</Link>
+                <Link to="/">Sair</Link>
               </li>
             </div>
           </ul>

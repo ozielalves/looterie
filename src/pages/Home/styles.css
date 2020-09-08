@@ -1,4 +1,4 @@
-#home {
+main {
   height: 100vh;
   background: url("../../assets/UserNav-bolinhas.png") no-repeat bottom;
   display: -webkit-box;
@@ -8,9 +8,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
-#home main .home-header {
+main #home .home-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,26 +25,31 @@
   margin: 2rem 1rem 0 0.5rem;
 }
 
-#home main .home-header img {
+main #home .home-header img {
   width: 90px;
 }
 
-#home main .home-header p, #home main .home-header strong {
+main #home .home-header p, main #home .home-header strong {
   color: #CB9B77;
   font-size: larger;
 }
 
-#home main .home-header .burguer {
+main #home .home-header .burguer {
   display: block;
   cursor: pointer;
 }
 
-#home main .home-header .burguer div {
+main #home .home-header .burguer div {
   width: 25px;
   height: 3px;
   background-color: #CB9B77;
   margin: 5px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.blured {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
 }
 /*# sourceMappingURL=styles.css.map */
