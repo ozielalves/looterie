@@ -81,6 +81,7 @@ const Sorteios = () => {
         { dataSorteios ? dataSorteios.map( sorteio => {
           return (
           <Sorteio 
+            key = {sorteio.id}
             title={sorteio.title} 
             description={sorteio.description} 
             img={sorteio.img} 

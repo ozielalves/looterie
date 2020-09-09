@@ -9,7 +9,9 @@ class UsersController {
       email,
       password
     } = request.body;
-  
+
+    console.log(name, lastname, email, password)
+    
     await knex('users').insert({
       name,
       lastname,

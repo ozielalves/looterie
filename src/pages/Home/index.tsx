@@ -33,6 +33,7 @@ const Home = () => {
       if (mainCurrentComponent.contains(e.target)) {
         // outside click
         setNavDisplay(false)
+        
       }  
     }
       // inside click

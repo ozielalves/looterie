@@ -2,7 +2,14 @@ import React from 'react';
 
 import './styles.css';
 
-const Sorteio = ({title, description, img, socialMedia}) => {
+interface sorteioProps { // Para torar necessárias estas prorpiedades
+  title: string,
+  description: string;
+  img: string;
+  socialMedia: string;
+}
+
+const Sorteio: React.FC<sorteioProps> = ({title, description, img, socialMedia}) => {
   return (
         <div className="card-sorteio" id="aberto">
           <div className="card-image">

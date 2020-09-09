@@ -1,12 +1,16 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
 import { AiFillInstagram, AiFillTwitterCircle, AiFillFacebook} from "react-icons/ai";
-import { FaBloggerB } from 'react-icons/fa'
+import { FaBloggerB } from 'react-icons/fa';
+import api from '../../../services/api'
 
 import './styles.css';
 
 const Register = ({toggle}) => {
+/* 
+  useEffect(() => {
+    api.get('');
+  }, []); */
 
   const [formData, setFormData] = useState({
     name: '',
@@ -32,12 +36,12 @@ const Register = ({toggle}) => {
       email,
       password
     }
-
-    console.log(data);
-
-    //await api.post('points', data);
-
+ 
+    await api.post('users', data)
+    .then(toggle());
+    
     alert('Cadastro realizado com Sucesso!');
+    
   }
 
   return(

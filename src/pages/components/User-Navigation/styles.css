@@ -30,7 +30,7 @@
 #nav {
   position: absolute;
   right: 0;
-  height: 100vh;
+  height: auto;
   background-color: #452642;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
