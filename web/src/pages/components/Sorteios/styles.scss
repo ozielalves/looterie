@@ -1,3 +1,5 @@
+$primary-color: #CB9B77;
+
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -10,6 +12,7 @@
     background: rgba(174, 168, 173, 0.58);
     border-radius: 5px 5px 0px 0;
     transition: background 0.7s ease, bottom 1s ease;
+    cursor: pointer;
     
     p {
       display: none;
@@ -52,58 +55,87 @@
   }
 }
 
+@media (min-width: 810px) and (max-width: 1023px) {
+.sorteiosPremiado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  } 
+  
+  .sorteios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
 @media (min-width: 1024px) {
+  .sorteiosPremiado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  } 
+  
+  .sorteios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .buttons {
     display: flex;
-    justify-content: flex-center;
+    justify-content: space-between;
+    margin: 1rem;
   
     .button {
+      position: unset;
       min-width: 135.359px;
       height: 51.6px;
-      position: absolute;
       padding: 1rem;
-      background: rgba(174, 168, 173, 0.58);
-      border-radius: 5px 5px 0px 0;
+      background: rgba(174, 168, 173, 0.75);
+      border-radius: 8px 0;
       transition: background 0.7s ease, bottom 1s ease;
+      cursor: pointer;
       
-      p {
-        display: none;
-      }
-    }
-  
-    .buttonSelected {
-      background: #AEA8AD;
-      z-index: 5 !important;
-      display: flex;
-      justify-content: center;
-      height: 52.6px !important;
-      pointer-events: none;
-  
       p {
         display: flex;
         color: white;
       }
+
+      &:hover {
+        background: rgb(197, 188, 196);
+      }
+    }
+
+    .buttonSelected {
+      background: rgba(174, 168, 173, 0.75);
+      z-index: 1;
+      height: auto;
+      pointer-events: all;
     }
   
     .b1 {
-      z-index: 4;
-      left: 25%;
+      z-index: 1;
+      left: 0%;
     }
   
     .b2 {
-      z-index: 3;
-      left: 35%;
+      z-index: 1;
+      left: 0%;
     }
   
     .b3 {
-      z-index: 2;
-      left: 45%;
+      z-index: 1;
+      left: 0%;
     }
       
     .b4 {
       z-index: 1;
-      left: 67%;
+      left: 0%;
       background: #003F6C;
+
+      &:hover {
+        background: #004e86 !important;
+      }
     }
   }
 }

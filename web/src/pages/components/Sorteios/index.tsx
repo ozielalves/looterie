@@ -73,7 +73,7 @@ const Sorteios = () => {
   }
 
   return(
-    <div className="folder-sorteios">
+    <div className="D">
       <div className="buttons">
         <div id="sorteiosabertos" 
              className={ selected === 'b1' ? "b1 button buttonSelected" : "b1 button" }

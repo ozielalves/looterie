@@ -16,6 +16,7 @@
   border-radius: 5px 5px 0px 0;
   -webkit-transition: background 0.7s ease, bottom 1s ease;
   transition: background 0.7s ease, bottom 1s ease;
+  cursor: pointer;
 }
 
 .buttons .button p {
@@ -63,62 +64,88 @@
   background: #003F6C;
 }
 
+@media (min-width: 810px) and (max-width: 1023px) {
+  .sorteiosPremiado {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .sorteios {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (min-width: 1024px) {
+  .sorteiosPremiado {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .sorteios {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
   .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: flex-center;
-        -ms-flex-pack: flex-center;
-            justify-content: flex-center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 1rem;
   }
   .buttons .button {
+    position: unset;
     min-width: 135.359px;
     height: 51.6px;
-    position: absolute;
     padding: 1rem;
-    background: rgba(174, 168, 173, 0.58);
-    border-radius: 5px 5px 0px 0;
+    background: rgba(174, 168, 173, 0.75);
+    border-radius: 8px 0;
     -webkit-transition: background 0.7s ease, bottom 1s ease;
     transition: background 0.7s ease, bottom 1s ease;
+    cursor: pointer;
   }
   .buttons .button p {
-    display: none;
-  }
-  .buttons .buttonSelected {
-    background: #AEA8AD;
-    z-index: 5 !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: 52.6px !important;
-    pointer-events: none;
-  }
-  .buttons .buttonSelected p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     color: white;
   }
+  .buttons .button:hover {
+    background: #c5bcc4;
+  }
+  .buttons .buttonSelected {
+    background: rgba(174, 168, 173, 0.75);
+    z-index: 1;
+    height: auto;
+    pointer-events: all;
+  }
   .buttons .b1 {
-    z-index: 4;
-    left: 25%;
+    z-index: 1;
+    left: 0%;
   }
   .buttons .b2 {
-    z-index: 3;
-    left: 35%;
+    z-index: 1;
+    left: 0%;
   }
   .buttons .b3 {
-    z-index: 2;
-    left: 45%;
+    z-index: 1;
+    left: 0%;
   }
   .buttons .b4 {
     z-index: 1;
-    left: 67%;
+    left: 0%;
     background: #003F6C;
+  }
+  .buttons .b4:hover {
+    background: #004e86 !important;
   }
 }
 /*# sourceMappingURL=styles.css.map */
