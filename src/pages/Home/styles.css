@@ -12,6 +12,24 @@ main {
   transition: all 1s ease;
 }
 
+main #home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #home .sidebar-desktop {
+  display: none;
+}
+
+main #home .wrapper-content-sorteios-menu .menu {
+  display: none;
+}
+
 main #home .home-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,5 +69,133 @@ main #home .home-header .burguer div {
 .blured {
   -webkit-filter: blur(3px);
           filter: blur(3px);
+}
+
+@media (min-width: 1024px) {
+  main #home {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main #home .sidebar-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 20%;
+    padding: 0 0.7rem 0 2rem;
+  }
+  main #home .sidebar-desktop img {
+    width: 87px;
+  }
+  main #home .sidebar-desktop .sidebar-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  main #home .sidebar-desktop .sidebar-header a, main #home .sidebar-desktop .sidebar-header p {
+    font-size: smaller;
+  }
+  main #home .sidebar-desktop .sidebar-header li {
+    padding: 2px;
+  }
+  main #home .sidebar-desktop .sidebar-header .user-profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main #home .sidebar-desktop .sidebar-header .user-profile img {
+    padding-right: 5px;
+    margin-bottom: 5px;
+  }
+  main #home .sidebar-desktop ul {
+    list-style: none;
+  }
+  main #home .sidebar-desktop ul li {
+    text-decoration: none;
+    padding: 0.6rem 0;
+  }
+  main #home .sidebar-desktop ul h3, main #home .sidebar-desktop ul a, main #home .sidebar-desktop ul p {
+    color: #CB9B77;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  main #home .sidebar-desktop .active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100vh;
+  }
+  main #home .sidebar-desktop .active .nav-mini-logo {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 3rem 0;
+  }
+  main #home .wrapper-content-sorteios-menu .menu {
+    display: block;
+  }
+  main #home .wrapper-content-sorteios-menu .menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    list-style: none;
+    margin: 1.5rem 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main #home .wrapper-content-sorteios-menu .menu ul li {
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+  }
+  main #home .wrapper-content-sorteios-menu .menu ul h3, main #home .wrapper-content-sorteios-menu .menu ul a, main #home .wrapper-content-sorteios-menu .menu ul p {
+    color: #CB9B77;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  main #home .wrapper-content-sorteios-menu .menu ul img {
+    width: 105px;
+  }
+  main #home .wrapper-content-sorteios-menu .menu ul .mini-logo {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  main #home .home-header {
+    display: none;
+    position: absolute;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
 }
 /*# sourceMappingURL=styles.css.map */

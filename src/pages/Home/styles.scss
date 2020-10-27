@@ -8,6 +8,20 @@ main {
   transition: all 1s ease;
 
   #home {
+    display: flex;
+    flex-direction: column;
+    
+    .sidebar-desktop {
+      display: none;
+    }
+
+    .wrapper-content-sorteios-menu {
+      .menu {
+        display: none;
+      }
+      
+    }
+
     .home-header {
       display: flex;
       justify-content: space-between;
@@ -41,4 +55,115 @@ main {
 
 .blured {
   filter: blur(3px);
+}
+
+@media (min-width: 1024px) {
+  main {
+    #home {
+      flex-direction: row;
+
+      .sidebar-desktop {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        padding: 0 0.7rem 0 2rem;
+
+        img {
+            width: 87px;
+        }
+
+        .sidebar-header {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          
+          a,p {
+            font-size: smaller;
+          }
+
+          li {
+            padding: 2px;
+          }
+          
+          .user-profile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+              padding-right: 5px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            text-decoration: none;
+            padding: 0.6rem 0;
+          }
+
+          h3, a, p{
+            color: $primary-color;
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+        }
+
+        .active {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          height: 100vh;
+          
+          .nav-mini-logo {
+            align-self: center;
+            margin: 3rem 0;
+          }
+        } 
+      }
+
+      .wrapper-content-sorteios-menu {
+        .menu {
+          display: block;
+          ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            margin: 1.5rem 0;
+            align-items: center;
+  
+            li {
+              text-decoration: none;
+              padding: 0.6rem 1rem;
+            }
+  
+            h3, a, p{
+              color: $primary-color;
+              text-decoration: none;
+              cursor: pointer;
+            }
+
+            img {
+              width: 105px;
+            }
+
+            .mini-logo {
+              align-self: center;
+            }
+          }
+        }
+      }
+
+      .home-header {
+        display: none;
+        position: absolute;
+        transform: translateY(-100%);
+      }
+    } 
+  }
 }

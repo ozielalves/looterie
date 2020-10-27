@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Sorteio from '../Sorteio';
 
@@ -48,6 +48,30 @@ const Sorteios = () => {
     }
   }
 
+  const WindowSize = () => {
+
+    const [windoWidth, setWindoWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindoWidth(window.innerWidth);
+      }
+      
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    
+    return windoWidth;
+  }
+
   return(
     <div className="folder-sorteios">
       <div className="buttons">
@@ -55,13 +79,13 @@ const Sorteios = () => {
              className={ selected === 'b1' ? "b1 button buttonSelected" : "b1 button" }
              onClick={handleFilter}
         >
-          <p>ABERTOS</p>
+          <p>{WindowSize() >= 1024 ? 'SORTEIOS ABERTOS' : 'ABERTOS'}</p>
         </div> 
         <div id="sorteiosfechados" 
              className={ selected === 'b2' ? "b2 button buttonSelected" : "b2 button" } 
              onClick={handleFilter}
         >
-          <p>FECHADOS</p>
+          <p>{WindowSize() >= 1024 ? 'SORTEIOS FECHADOS' : 'FECHADOS'}</p>
         </div>
         <div id="meussorteios" 
              className={ selected === 'b3' ? "b3 button buttonSelected" : "b3 button" } 
@@ -74,7 +98,7 @@ const Sorteios = () => {
              className={ selected === 'b4' ? "b4 button buttonSelected" : "b4 button" } 
              onClick={handleFilter}
         >
-          <p id="premio">GANHEI</p>
+          <p id="premio">{WindowSize() >= 1024 ? 'SORTEIOS PREMIADOS' : 'GANHEI'}</p>
         </div>
       </div>
       <div className={ selected === "b4" ? "sorteiosPremiado" : "sorteios" }>

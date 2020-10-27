@@ -2,7 +2,7 @@ $primary-color: #CB9B77;
 
 /* Transitions */
 
-.nav-enter {
+/* .nav-enter {
   transform: translate(110%);
 }
 .nav-enter-active {
@@ -14,20 +14,20 @@ $primary-color: #CB9B77;
 }
 .nav-exit-active {
   transform: translate(110%);
-  transition: transform 1s;
-}
+  transition: transform 1s; 
+} */
 
 #nav {
-  position: absolute;
+  position: fixed;
   right: 0;
-  height: auto;
+  height: 100%;
   background-color: #452642;
   
   flex-direction: column;
   width: 50%;
   
   transition: all 0.5s ease;
-  padding: 0 1rem 0 2rem;
+  padding: 0 0.7rem 0 2rem;
   box-shadow: -4px 0 10px  rgba(0, 0, 0, 0.5);
   z-index: 1;
 
@@ -90,11 +90,40 @@ $primary-color: #CB9B77;
 }
 
 .not-visible {
-  //transform: translate(110%);
+  transform: translate(110%);
   display: none;
 }
 
+.nav-in {
+  transform: in();
+  transition: 1.2s ease;
+}
+
+.nav-out {
+  transform: translate(110%);
+  transition: 1.2s ease;
+}
+
 .visible {
-  //transform: translate(0%);
   display: flex;
+  transform: translate(0%);
+  transition: 1.2s ease;
+}
+
+@keyframes in {
+  from {
+    transform: translate(110%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+@keyframes out {
+  from {
+    transform: translate(0%);
+  }
+  to {
+    transform: translate(110%);
+  }
 }
