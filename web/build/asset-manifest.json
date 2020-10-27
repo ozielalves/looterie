@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e50d744a.chunk.css",
+    "main.js": "/static/js/main.531da6fe.chunk.js",
+    "main.js.map": "/static/js/main.531da6fe.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bfca2edd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bfca2edd.js.map",
+    "static/js/2.ad90336e.chunk.js": "/static/js/2.ad90336e.chunk.js",
+    "static/js/2.ad90336e.chunk.js.map": "/static/js/2.ad90336e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ab02cf83d84953c1900ba7bcc88be9c1.js": "/precache-manifest.ab02cf83d84953c1900ba7bcc88be9c1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e50d744a.chunk.css.map": "/static/css/main.e50d744a.chunk.css.map",
+    "static/js/2.ad90336e.chunk.js.LICENSE.txt": "/static/js/2.ad90336e.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/static/media/UserNav-bolinhas.bff9214a.png",
+    "static/media/Logo.png": "/static/media/Logo.a1efc505.png",
+    "static/media/Mini-Logo.svg": "/static/media/Mini-Logo.a25b4461.svg",
+    "static/media/user-avatar.svg": "/static/media/user-avatar.3033e43e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bfca2edd.js",
+    "static/js/2.ad90336e.chunk.js",
+    "static/css/main.e50d744a.chunk.css",
+    "static/js/main.531da6fe.chunk.js"
+  ]
+}
