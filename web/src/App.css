@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #CB9B77;
+  --title-color: #E0DAD7;
+  --card-text-color: #000000;
+  --card-span-color: rgba(255, 255, 255, 0.50);;
+  --text-color: #E1D4D7;
+  --hover-color: #003F6C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #50354C 0%, #837175 44.27%, #8B7979 57.81%, #C89B7A 100%);
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+}
+
+body, input, button {
+  font-family: Roboto, Arial, Helvetica, sans-serif, ;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+p {
+  color: var(--card-text-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+span,li {
+  color: var(--card-span-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Scroolbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.50); 
+}
+
+::-webkit-scrollbar-track-piece, ::-webkit-scrollbar-track-piece {
+  background: #7c686f; 
+}
