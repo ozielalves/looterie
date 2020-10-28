@@ -57,6 +57,17 @@ main {
   filter: blur(3px);
 }
 
+@media (max-width: 364px) {
+  main{
+    #home {
+      .home-header {
+        p, strong {
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 @media (min-width: 1024px) {
   main {
@@ -70,7 +81,11 @@ main {
         padding: 0 0.7rem 0 2rem;
 
         img {
-            width: 87px;
+          width: 120px;
+          margin-bottom: 20px;
+          margin-right: 10px;
+          box-shadow: 3px 3px 20px rgba(0,0,0, 0.3);
+          border-radius: 50%;
         }
 
         .sidebar-header {
@@ -90,11 +105,6 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            img {
-              padding-right: 5px;
-              margin-bottom: 5px;
-            }
           }
         }
 
@@ -107,7 +117,7 @@ main {
           }
 
           h3, a, p{
-            color: $primary-color;
+            color: #ffdcdc;
             text-decoration: none;
             cursor: pointer;
           }
@@ -117,7 +127,7 @@ main {
         .active {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
           justify-content: space-between;
           height: 100vh;
           
@@ -131,6 +141,11 @@ main {
       .wrapper-content-sorteios-menu {
         .menu {
           display: block;
+          background: #452642;
+          border-radius: 0 0 30px 30px;
+          padding: 1px 20px;
+          box-shadow: 3px 3px 20px rgba(0,0,0, 0.3);
+          transition: all 1s ease;
           ul {
             display: flex;
             flex-direction: row;

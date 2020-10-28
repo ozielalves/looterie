@@ -71,6 +71,12 @@ main #home .home-header .burguer div {
           filter: blur(3px);
 }
 
+@media (max-width: 364px) {
+  main #home .home-header p, main #home .home-header strong {
+    display: none;
+  }
+}
+
 @media (min-width: 1024px) {
   main #home {
     -webkit-box-orient: horizontal;
@@ -90,7 +96,12 @@ main #home .home-header .burguer div {
     padding: 0 0.7rem 0 2rem;
   }
   main #home .sidebar-desktop img {
-    width: 87px;
+    width: 120px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
   }
   main #home .sidebar-desktop .sidebar-header {
     display: -webkit-box;
@@ -119,10 +130,6 @@ main #home .home-header .burguer div {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  main #home .sidebar-desktop .sidebar-header .user-profile img {
-    padding-right: 5px;
-    margin-bottom: 5px;
-  }
   main #home .sidebar-desktop ul {
     list-style: none;
   }
@@ -131,7 +138,7 @@ main #home .home-header .burguer div {
     padding: 0.6rem 0;
   }
   main #home .sidebar-desktop ul h3, main #home .sidebar-desktop ul a, main #home .sidebar-desktop ul p {
-    color: #CB9B77;
+    color: #ffdcdc;
     text-decoration: none;
     cursor: pointer;
   }
@@ -143,9 +150,9 @@ main #home .home-header .burguer div {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -159,6 +166,13 @@ main #home .home-header .burguer div {
   }
   main #home .wrapper-content-sorteios-menu .menu {
     display: block;
+    background: #452642;
+    border-radius: 0 0 30px 30px;
+    padding: 1px 20px;
+    -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
   }
   main #home .wrapper-content-sorteios-menu .menu ul {
     display: -webkit-box;

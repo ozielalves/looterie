@@ -64,6 +64,12 @@
   background: #003F6C;
 }
 
+@media (min-width: 420px) and (max-width: 809px) {
+  .buttons .button {
+    min-width: 176.359px;
+  }
+}
+
 @media (min-width: 810px) and (max-width: 1023px) {
   .sorteiosPremiado {
     display: -ms-grid;
@@ -77,6 +83,9 @@
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
+  .buttons .button {
+    min-width: 223.359px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -85,12 +94,38 @@
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    background: #003f6c61;
+    justify-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    min-height: 31rem;
+    overflow-y: auto;
+    margin: 1rem 0 0 0;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
   }
   .sorteios {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    background: #aea8ad6b;
+    justify-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    min-height: 31rem;
+    overflow-y: auto;
+    margin: 1rem 0 0 0;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
   }
   .buttons {
     display: -webkit-box;
@@ -107,7 +142,9 @@
     height: 51.6px;
     padding: 1rem;
     background: rgba(174, 168, 173, 0.75);
-    border-radius: 8px 0;
+    border-radius: 30px;
+    -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     -webkit-transition: background 0.7s ease, bottom 1s ease;
     transition: background 0.7s ease, bottom 1s ease;
     cursor: pointer;
@@ -117,6 +154,7 @@
     display: -ms-flexbox;
     display: flex;
     color: white;
+    pointer-events: none;
   }
   .buttons .button:hover {
     background: #c5bcc4;

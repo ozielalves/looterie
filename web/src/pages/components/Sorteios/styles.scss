@@ -55,8 +55,17 @@ $primary-color: #CB9B77;
   }
 }
 
+@media (min-width: 420px) and (max-width: 809px) {
+  .buttons {
+
+    .button {
+      min-width: 176.359px;
+    }
+  }
+}
+
 @media (min-width: 810px) and (max-width: 1023px) {
-.sorteiosPremiado {
+  .sorteiosPremiado {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -67,18 +76,43 @@ $primary-color: #CB9B77;
     grid-template-columns: 1fr 1fr;
   }
 
+  .buttons {
+
+    .button {
+      min-width: 223.359px;
+    }
+  }
+
 }
 
 @media (min-width: 1024px) {
   .sorteiosPremiado {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background: #003f6c61;
+    justify-items: center;
+    align-items: start;
+    min-height: 31rem;
+    overflow-y: auto;
+    margin: 1rem 0 0 0;
+    transition: all 0.7s ease;
+    box-shadow: 3px 3px 20px rgba(0,0,0, 0.3);
+    border-radius: 30px;
 
   } 
   
   .sorteios {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background: #aea8ad6b;
+    justify-items: center;
+    align-items: start;
+    min-height: 31rem;
+    overflow-y: auto;
+    margin: 1rem 0 0 0;
+    transition: all 0.7s ease;
+    box-shadow: 3px 3px 20px rgba(0,0,0, 0.3);
+    border-radius: 30px;
   }
 
   .buttons {
@@ -92,13 +126,15 @@ $primary-color: #CB9B77;
       height: 51.6px;
       padding: 1rem;
       background: rgba(174, 168, 173, 0.75);
-      border-radius: 8px 0;
+      border-radius: 30px;
+      box-shadow: 3px 3px 10px rgba(0,0,0, 0.2);
       transition: background 0.7s ease, bottom 1s ease;
       cursor: pointer;
       
       p {
         display: flex;
         color: white;
+        pointer-events: none;
       }
 
       &:hover {

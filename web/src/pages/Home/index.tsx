@@ -46,8 +46,8 @@ const Home = () => {
     const nav = document.querySelector('#nav')
     console.log(nav)
     if (!navDisplay) {
-      nav?.classList.remove('not-visible')
-      nav?.classList.add('visible')
+      nav?.classList.add('visible','not-visible')
+      /* nav?.classList.remove('not-visible') */
       setNavDisplay(!navDisplay);
     } else {
       nav?.classList.remove('visible')
@@ -63,7 +63,7 @@ const Home = () => {
 
   return(
     <>
-      <div ref={navComponent} id="nav" className='not-visible'/* { navDisplay ? 'visible' : 'not-visible'} */>
+      <div ref={navComponent} id="nav" className='not-visible'>
         <UserNav />
       </div>
       <main ref={mainComponent} className={navDisplay ? 'blured' : ''}>
